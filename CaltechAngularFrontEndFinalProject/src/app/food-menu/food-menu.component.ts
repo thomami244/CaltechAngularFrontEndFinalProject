@@ -10,5 +10,5 @@ import { FormControl,  ReactiveFormsModule } from '@angular/forms';
 })
 export class FoodMenuComponent {
   // FoodMenuComponent = new FormControl('');
-  name = new FormControl('');
+  quantity = new FormControl('');
 }

@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProductComponent } from './product/product.component';
+import { ListProductComponent } from './list-product/list-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FoodMenuComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-food-menu',
-  templateUrl: './food-menu.component.html',
-  styleUrls: ['./food-menu.component.css']
+    // templateUrl: './food-menu.component.html',
+    styleUrls: ['./food-menu.component.css'],
+  template: `
+  Food Menu: <input type="text" [formControl]="foodMenuControl">
+  `
 })
-export class FoodMenuComponent {
 
+export class FoodMenuComponent {
+  FoodMenuComponent = new FormControl('');
 }

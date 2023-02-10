@@ -23,38 +23,6 @@
 
 
 
-<div class="container">
-  <table class = "table">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Add to order</th>
-      </tr>
-    </thead>
-
-      <tbody>
-        <tr *ngFor = "let product of products">
-          <td> {{product.name }}</td>
-          <td>{{product.description}}</td>
-          <td> {{product.price}}</td>
-          <td>
-
-            <label for="name">Name: </label>
-            <input id="quantity" type="text" [formControl]="quantity">
-
-          </td>
-
-          <td> <button (click) = "updateTodo(todo.id)" class=" btn btn-success">Update</button></td>
-        </tr>
-      </tbody>
-
-    </table>
-
-</div>
-
 
 
 <!-- <table>

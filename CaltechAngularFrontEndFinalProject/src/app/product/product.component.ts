@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { List-Product} from '@angular/router';
 // import { Todo } from '../list-todos/list-todos.component';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
@@ -9,6 +10,16 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+
+  // product_id!: number;
+
+  // productname = productname;
+  // this.productdescription = productdescription;
+  // this.productURL = productURL;
+  // this.productcategory = productcategory;
+  // this.productprice = productprice;
+  // this.productquantity = productquantity;
+  // this.isActivated = isActivated;
 
 }
 

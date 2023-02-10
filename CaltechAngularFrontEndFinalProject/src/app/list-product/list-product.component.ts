@@ -2,16 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
-@Component({
-  selector: 'app-list-product',
-  templateUrl: './list-product.component.html',
-  styleUrls: ['./list-product.component.css']
-})
-export class ListProductComponent {
-
-}
-
-
 
 export class Product {
   constructor (public product_id : number,
@@ -25,7 +15,19 @@ export class Product {
   }
 }
 
-export class ListProductComponent implements OnInit{
+@Component({
+  selector: 'app-list-product',
+  templateUrl: './list-product.component.html',
+  styleUrls: ['./list-product.component.css']
+})
+
+
+export class ListProductComponent {
+  // ngOnInit() {
+  //   this.refreshProducts()
+  // }
+  products: Product[] =[]
+
     // constructor(private todoDataService: TodoDataService, private router: Router) { }
 
     // ngOnInit() {
@@ -55,24 +57,24 @@ export class ListProductComponent implements OnInit{
   //   new Todo(3,'visit the USA', false, new Date() )
   //   ]
 
-    products = [
-      {product_id:1,
-        productname: 'Learn to Dance',
-        productdescription: 'description Learn to Dance',
-        productURL: 'www.Learn to Dance',
-        productcategory: 'category Learn to Dance',
-        productprice: 1.99,
-        productquantity: 100,
-        isActivated: true}
+    // products = [
+    //   {product_id:1,
+    //     productname: 'Learn to Dance',
+    //     productdescription: 'description Learn to Dance',
+    //     productURL: 'www.Learn to Dance',
+    //     productcategory: 'category Learn to Dance',
+    //     productprice: 1.99,
+    //     productquantity: 100,
+    //     isActivated: true}
 
-      { product_id:2,
-        productname: 'burghers',
-        productdescription: 'description burghers',
-        productURL: 'www.burghers',
-        productcategory: 'category burghers',
-        productprice: 9.99,
-        productquantity: 20,
-        isActivated: true}
-    ]
+    //   { product_id:2,
+    //     productname: 'burghers',
+    //     productdescription: 'description burghers',
+    //     productURL: 'www.burghers',
+    //     productcategory: 'category burghers',
+    //     productprice: 9.99,
+    //     productquantity: 20,
+    //     isActivated: true}
+    // ]
 
 }

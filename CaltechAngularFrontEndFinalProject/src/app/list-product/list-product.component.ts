@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl,  ReactiveFormsModule } from '@angular/forms';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
 
@@ -27,6 +28,7 @@ export class ListProductComponent {
   //   this.refreshProducts()
   // }
   products: Product[] =[]
+  quantity = new FormControl('');
 
     // constructor(private todoDataService: TodoDataService, private router: Router) { }
 

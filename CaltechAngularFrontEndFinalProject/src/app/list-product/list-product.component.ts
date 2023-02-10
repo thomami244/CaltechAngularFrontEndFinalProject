@@ -30,6 +30,11 @@ export class ListProductComponent {
   // products: Product[] =[]
   quantity = new FormControl('');
 
+  populateData(){
+
+    console.log(Product)
+  }
+
     // constructor(private todoDataService: TodoDataService, private router: Router) { }
 
     // ngOnInit() {

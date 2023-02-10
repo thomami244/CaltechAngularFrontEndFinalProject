@@ -27,7 +27,7 @@ export class ListProductComponent {
   // ngOnInit() {
   //   this.refreshProducts()
   // }
-  products: Product[] =[]
+  // products: Product[] =[]
   quantity = new FormControl('');
 
     // constructor(private todoDataService: TodoDataService, private router: Router) { }
@@ -59,24 +59,24 @@ export class ListProductComponent {
   //   new Todo(3,'visit the USA', false, new Date() )
   //   ]
 
-    // products = [
-    //   {product_id:1,
-    //     productname: 'Learn to Dance',
-    //     productdescription: 'description Learn to Dance',
-    //     productURL: 'www.Learn to Dance',
-    //     productcategory: 'category Learn to Dance',
-    //     productprice: 1.99,
-    //     productquantity: 100,
-    //     isActivated: true}
+  products: Product[] = [
+      {product_id:1,
+        productname: 'Coca-Cola',
+        productdescription: 'Fizzy Drink',
+        productURL: 'www.coca-cola.com',
+        productcategory: 'drinks',
+        productprice: 1.99,
+        productquantity: 100,
+        isActivated: true},
 
-    //   { product_id:2,
-    //     productname: 'burghers',
-    //     productdescription: 'description burghers',
-    //     productURL: 'www.burghers',
-    //     productcategory: 'category burghers',
-    //     productprice: 9.99,
-    //     productquantity: 20,
-    //     isActivated: true}
-    // ]
+      { product_id:2,
+        productname: 'burghers',
+        productdescription: 'description burghers',
+        productURL: 'www.burghers',
+        productcategory: 'category burghers',
+        productprice: 9.99,
+        productquantity: 20,
+        isActivated: true}
+    ]
 
 }

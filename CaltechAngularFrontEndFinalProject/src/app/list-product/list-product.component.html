@@ -5,8 +5,8 @@
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
-        <th>Quantity Available</th>
-        <th>Quantity</th>
+        <th>Available</th>
+        <th>Order Quantity</th>
         <th>Add to order</th>
       </tr>
     </thead>
@@ -19,7 +19,7 @@
           <td> {{product.productquantity}}</td>
           <td>
 
-            <label for="quantity">Quantity: </label>
+            <label for="quantity"></label>
             <input id="quantity" type="text" [formControl]="quantity">
 
           </td>

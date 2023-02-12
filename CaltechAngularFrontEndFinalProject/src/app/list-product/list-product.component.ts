@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input } from '@angular/core';
+import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -17,6 +17,8 @@ import { CommonModule } from '@angular/common';
 
 @Injectable()
 export class Product {
+
+
 
   constructor (
     @Inject(String) public product_id : number,
@@ -47,7 +49,9 @@ export class ListProductComponent implements OnInit{
   productname: string =''
   productdescription: string =''
   productprice: number =0
-  productquantity: number =0
+  @Input() productquantity: number =0
+  @Output()productquantityChange: number =0
+
 
   populateData(product_id: any){
 

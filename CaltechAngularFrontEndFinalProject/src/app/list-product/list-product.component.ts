@@ -54,7 +54,7 @@ export class ListProductComponent implements OnInit{
     // console.log(Product)
     // console.log(this.quantity);
     // console.log(this.products);
-    console.log(this.product_id);
+    console.log(product_id);
 
     // this.product.setValue({
     //   name: 'Akash',

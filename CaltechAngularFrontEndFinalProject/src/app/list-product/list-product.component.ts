@@ -1,18 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl,  ReactiveFormsModule } from '@angular/forms';
+import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  declarations: []
+  }
+)
 
+
+@Injectable()
 export class Product {
-  constructor (public product_id : number,
-    public productname : string,
-    public productdescription : string,
-    public productURL : string,
-    public productcategory : string,
-    public productprice : number,
-    public productquantity : number,
-    public isActivated: boolean) {
+
+  constructor (
+    @Inject(String) public product_id : number,
+    @Inject(String)  public productname : string,
+    @Inject(String)  public productdescription : string,
+    @Inject(String)  public productURL : string,
+    @Inject(String)  public productcategory : string,
+    @Inject(String) public productprice : number,
+    @Inject(String) public productquantity : number,
+    @Inject(String) public isActivated: boolean) {
   }
 }
 
@@ -23,17 +37,63 @@ export class Product {
 })
 
 
-export class ListProductComponent {
+export class ListProductComponent implements OnInit{
   // ngOnInit() {
   //   this.refreshProducts()
   // }
   // products: Product[] =[]
+  product_id: number =0
   quantity = new FormControl('');
+  productname: string =''
+  productdescription: string =''
+  productprice: number =0
+  productquantity: number =0
 
-  populateData(){
+  populateData(product_id: any){
 
-    console.log(Product)
+    // console.log(Product)
+    // console.log(this.quantity);
+    // console.log(this.products);
+    console.log(this.product_id);
+
+    // this.product.setValue({
+    //   name: 'Akash',
+    //   email: 'akash@xyz.com',
+    //   gender: 'male',
+    //   paymentType: 'Yearly',
+    //   notification: 'false',
+    // });
   }
+
+  ngOnInit(): void {}
+
+  products: Product[] = [
+    {product_id:1,
+      productname: 'Coca-Cola',
+      productdescription: 'Fizzy Drink',
+      productURL: 'www.coca-cola.com',
+      productcategory: 'drinks',
+      productprice: 1.99,
+      productquantity: 100,
+      isActivated: true},
+
+    { product_id:2,
+      productname: 'burghers',
+      productdescription: 'description burghers',
+      productURL: 'www.burghers',
+      productcategory: 'category burghers',
+      productprice: 9.99,
+      productquantity: 20,
+      isActivated: true}
+  ]
+
+}
+
+// updateItem(productname) {
+//   console.log(productname)
+//   // let url: string = "/update-item/" + name;
+//   // this.router.navigateByUrl(url);
+// }
 
     // constructor(private todoDataService: TodoDataService, private router: Router) { }
 
@@ -64,24 +124,8 @@ export class ListProductComponent {
   //   new Todo(3,'visit the USA', false, new Date() )
   //   ]
 
-  products: Product[] = [
-      {product_id:1,
-        productname: 'Coca-Cola',
-        productdescription: 'Fizzy Drink',
-        productURL: 'www.coca-cola.com',
-        productcategory: 'drinks',
-        productprice: 1.99,
-        productquantity: 100,
-        isActivated: true},
 
-      { product_id:2,
-        productname: 'burghers',
-        productdescription: 'description burghers',
-        productURL: 'www.burghers',
-        productcategory: 'category burghers',
-        productprice: 9.99,
-        productquantity: 20,
-        isActivated: true}
-    ]
 
-}
+// function updateItem(product_name: any, string: any) {
+//   throw new Error('Function not implemented.');
+// }

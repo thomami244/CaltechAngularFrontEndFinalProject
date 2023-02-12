@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product} from '../list-product/list-product.component';
 // import { Todo } from '../list-todos/list-todos.component';
 // import { TodoDataService } from '../service/data/todo-data.service';
+
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
+
+@Injectable()
 export class ProductComponent {
   id!: number
   products: Product = new Product(1, 'Coca-Cola', 'fizzy drink', 'www.url', 'drinks', 1.99, 100, true);

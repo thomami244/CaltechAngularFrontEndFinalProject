@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators,  ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-food-menu',
@@ -9,8 +9,14 @@ import { FormGroup, FormControl, Validators,  ReactiveFormsModule } from '@angul
   // `
 })
 export class FoodMenuComponent {
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
   // FoodMenuComponent = new FormControl('');
-  quantity = new FormControl('');
+  // quantity = new FormControl('');
+
+  @Input() category: string = "meals"
+  @Output() categoryChange: string = "meals"
 
   form = new FormGroup({
     category: new FormControl('', Validators.required)
@@ -26,5 +32,7 @@ export class FoodMenuComponent {
 
   changeCategory(e: any) {
     console.log(e.target.value);
+    this.category = e.target.value
+
   }
 }

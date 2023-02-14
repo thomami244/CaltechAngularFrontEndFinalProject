@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input, Ou
 import { Router } from '@angular/router';
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FoodMenuComponent } from '../food-menu/food-menu.component';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
 @NgModule({
@@ -28,7 +29,10 @@ export class Product {
     @Inject(String)  public productcategory : string,
     @Inject(String) public productprice : number,
     @Inject(String) public productquantity : number,
-    @Inject(String) public isActivated: boolean) {
+    @Inject(String) public isActivated: boolean
+    )
+
+    {
   }
 }
 
@@ -49,8 +53,13 @@ export class ListProductComponent implements OnInit{
   productname: string =''
   productdescription: string =''
   productprice: number =0
+  @Input() category: string ="meals"
   @Input() productquantity: number =0
   @Output()productquantityChange: number =0
+
+  constructor(
+    public foodmenucomponent: FoodMenuComponent
+  ){}
 
 
   populateData(product_id: any, productname:any, productquantity: any){

@@ -18,9 +18,6 @@ import { FoodMenuComponent } from '../food-menu/food-menu.component';
 
 @Injectable()
 export class Product {
-
-
-
   constructor (
     @Inject(String) public product_id : number,
     @Inject(String)  public productname : string,
@@ -28,6 +25,7 @@ export class Product {
     @Inject(String)  public productURL : string,
     @Inject(String)  public productcategory : string,
     @Inject(String) public productprice : number,
+    @Inject(String) public availablequantity : number,
     @Inject(String) public productquantity : number,
     @Inject(String) public isActivated: boolean
     )
@@ -53,6 +51,7 @@ export class ListProductComponent implements OnInit{
   productname: string =''
   productdescription: string =''
   productprice: number =0
+  availablequantity: number =0
   @Input() category: string ="meals"
   @Input() productquantity: number =0
   @Output()productquantityChange: number =0
@@ -90,17 +89,29 @@ export class ListProductComponent implements OnInit{
       productURL: 'www.coca-cola.com',
       productcategory: 'drinks',
       productprice: 1.99,
-      productquantity: 100,
+      availablequantity: 100,
+      productquantity: 0,
       isActivated: true},
 
     { product_id:2,
       productname: 'burghers',
       productdescription: 'description burghers',
       productURL: 'www.burghers',
-      productcategory: 'category burghers',
+      productcategory: 'meals',
       productprice: 9.99,
-      productquantity: 20,
-      isActivated: true}
+      availablequantity: 20,
+      productquantity: 0,
+      isActivated: true},
+
+      { product_id:3,
+        productname: 'Potato wedges',
+        productdescription: 'potato wedges with great flavor',
+        productURL: 'www.potatowedges.com',
+        productcategory: 'sides',
+        productprice: 2.99,
+        availablequantity: 15,
+        productquantity: 0,
+        isActivated: true}
   ]
 
 }

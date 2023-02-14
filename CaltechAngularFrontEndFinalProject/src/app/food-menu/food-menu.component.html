@@ -3,6 +3,7 @@
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
+      <label for="category"></label>
       <div class="row text-justify text-center">
         <div class="col-lg-12">
           <div class="btn-group"
@@ -11,30 +12,33 @@
             <input type="radio"
             class="btn-check"
             name="category"
-            id="btnradio1"
+            id="meals"
+            value="meals"
             formControlName="category"
             (change)="changeCategory($event)">
             autocomplete="off" checked
-            <label class="btn btn-outline-primary btn-outline-success" for="btnradio1">Meals</label>
+            <label class="btn btn-outline-primary btn-outline-success" for="meals">Meals</label>
 
             <input type="radio"
             class="btn-check"
             name="category"
-            id="btnradio2"
+            id="drinks"
+            value="drinks"
             formControlName="category"
             (change)="changeCategory($event)"
             autocomplete="off">
 
-            <label class="btn btn-outline-primary btn-outline-danger" for="btnradio2">Drinks</label>
+            <label class="btn btn-outline-primary btn-outline-danger" for="drinks">Drinks</label>
 
             <input type="radio"
             class="btn-check"
             name="category"
+            value="sides"
             formControlName="category"
             (change)="changeCategory($event)"
-            id="btnradio3"
+            id="sides"
             autocomplete="off">
-            <label class="btn btn-outline-primary btn-outline-info" for="btnradio3">Sides</label>
+            <label class="btn btn-outline-primary btn-outline-info" for="sides">Sides</label>
           </div>
           <!-- This div is centered and takes 6 columns -->
         </div>

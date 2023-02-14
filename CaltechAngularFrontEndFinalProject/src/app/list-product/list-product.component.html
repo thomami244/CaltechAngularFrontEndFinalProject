@@ -23,15 +23,16 @@
             <input id="quantity" type="text" [formControl]="quantity"> -->
 
 
-            <label>0</label>
+            <!-- <label>0</label> -->
 
             <!-- <button (click)="updateItem(product.productname)" class="btn btn-info">Update</button> -->
 
 
             <input type="text" class="form-control" [(ngModel)]="product.productquantity">
+            <!-- {{product.productquantity}} -->
           </td>
           <td>
-          <button  class="btn btn-success" (click) = "populateData(product.productname)"> Update</button>
+          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productname, product.productquantity)"> Update</button>
           <!-- <td> <button  class="btn btn-success" (click) = "populateData(product.product_id)">
             Update</button></td> -->
             <!-- <td> <button  class="btn btn-success" [product_id]="product.product_id"

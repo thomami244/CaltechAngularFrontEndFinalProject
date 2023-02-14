@@ -53,12 +53,14 @@ export class ListProductComponent implements OnInit{
   @Output()productquantityChange: number =0
 
 
-  populateData(product_id: any){
+  populateData(product_id: any, productname:any, productquantity: any){
 
     // console.log(Product)
     // console.log(this.quantity);
     // console.log(this.products);
     console.log(product_id);
+    console.log(productname);
+    console.log(productquantity);
 
     // this.product.setValue({
     //   name: 'Akash',

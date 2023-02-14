@@ -59,6 +59,7 @@ export class ListProductComponent implements OnInit{
 
   constructor(
     public foodmenucomponent: FoodMenuComponent
+
   ){}
 
 

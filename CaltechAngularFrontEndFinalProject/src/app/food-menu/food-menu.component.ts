@@ -8,12 +8,13 @@ import { FormGroup, FormControl, Validators,  ReactiveFormsModule } from '@angul
   // Food Menu: <input type="text" [formControl]="foodMenuControl">
   // `
 })
-export class FoodMenuComponent {
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
+export class FoodMenuComponent implements OnInit {
+  ngOnInit(): void {
+   this.category = 'meals'
+  }
   // FoodMenuComponent = new FormControl('');
   // quantity = new FormControl('');
+
 
   @Input() category: string = "meals"
   @Output() categoryChange: string = "meals"

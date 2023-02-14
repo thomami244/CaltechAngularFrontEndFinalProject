@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl,  ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators,  ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-food-menu',
     templateUrl: './food-menu.component.html',
@@ -11,4 +11,20 @@ import { FormControl,  ReactiveFormsModule } from '@angular/forms';
 export class FoodMenuComponent {
   // FoodMenuComponent = new FormControl('');
   quantity = new FormControl('');
+
+  form = new FormGroup({
+    category: new FormControl('', Validators.required)
+  });
+
+  get f(){
+    return this.form.controls;
+  }
+
+  submit(){
+    console.log(this.form.value);
+  }
+
+  changeCategory(e: any) {
+    console.log(e.target.value);
+  }
 }

@@ -27,6 +27,7 @@ export class Product {
     @Inject(String) public productprice : number,
     @Inject(String) public availablequantity : number,
     @Inject(String) public productquantity : number,
+    @Inject(Number) public producttotal : number,
     @Inject(String) public isActivated: boolean
     )
 
@@ -56,13 +57,16 @@ export class ListProductComponent implements OnInit{
   @Input() productquantity: number =0
   @Output()productquantityChange: number =0
 
+  @Input() producttotal: number =0
+  @Output()producttotalChange: number =0
+
   constructor(
     public foodmenucomponent: FoodMenuComponent
 
   ){}
 
 
-  populateData(product_id: any, productname:any, productquantity: any){
+  populateData(product_id: any, productprice: number, productname:any, productquantity: number){
 
     // console.log(Product)
     // console.log(this.quantity);
@@ -70,6 +74,10 @@ export class ListProductComponent implements OnInit{
     console.log(product_id);
     console.log(productname);
     console.log(productquantity);
+    this.producttotal = productquantity * productprice;
+    // this.producttotal =  (Math.round(this.producttotal* 100 )/100).toFixed(2);
+
+    console.log(this.producttotal)
 
     // this.product.setValue({
     //   name: 'Akash',
@@ -91,6 +99,7 @@ export class ListProductComponent implements OnInit{
       productprice: 1.99,
       availablequantity: 100,
       productquantity: 0,
+      producttotal: 0,
       isActivated: true},
 
     { product_id:2,
@@ -101,6 +110,7 @@ export class ListProductComponent implements OnInit{
       productprice: 9.99,
       availablequantity: 20,
       productquantity: 0,
+      producttotal: 0,
       isActivated: true},
 
       { product_id:3,
@@ -111,7 +121,19 @@ export class ListProductComponent implements OnInit{
         productprice: 2.99,
         availablequantity: 15,
         productquantity: 0,
-        isActivated: true}
+        producttotal: 0,
+        isActivated: true},
+
+        { product_id:4,
+          productname: 'Seared fish',
+          productdescription: 'Oven-baked fish in olive oil',
+          productURL: 'www.fishnchipse.com',
+          productcategory: 'meals',
+          productprice: 15.99,
+          availablequantity: 9,
+          productquantity: 0,
+          producttotal: 0,
+          isActivated: true}
   ]
 
 }

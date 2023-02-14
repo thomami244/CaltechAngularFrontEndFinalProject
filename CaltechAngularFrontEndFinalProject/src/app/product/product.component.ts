@@ -14,7 +14,7 @@ import { Product} from '../list-product/list-product.component';
 @Injectable()
 export class ProductComponent {
   id!: number
-  products: Product = new Product(1, 'Coca-Cola', 'fizzy drink', 'www.url', 'drinks', 1.99, 100, 0, true);
+  products: Product = new Product(1, 'Coca-Cola', 'fizzy drink', 'www.url', 'drinks', 1.99, 100, 0, 0, true);
 
 
   // product_id!: number;

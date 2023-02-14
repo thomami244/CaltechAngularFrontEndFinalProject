@@ -8,6 +8,7 @@
         <th>Available</th>
         <th>Order Quantity</th>
         <th>Add to order</th>
+        <th>Total</th>
       </tr>
     </thead>
 
@@ -32,7 +33,7 @@
             <!-- {{product.productquantity}} -->
           </td>
           <td>
-          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productname, product.productquantity)"> Update</button>
+          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, product.productquantity)"> Update</button>
           <!-- <td> <button  class="btn btn-success" (click) = "populateData(product.product_id)">
             Update</button></td> -->
             <!-- <td> <button  class="btn btn-success" [product_id]="product.product_id"
@@ -40,6 +41,7 @@
 
             </td>
           <!-- <td> <button (click) = "updateProduct(product.id)" class=" btn btn-success">Update</button></td> -->
+          <td >{{product.producttotal}} </td>
         </tr>
       </tbody>
 {{foodmenucomponent.category}}

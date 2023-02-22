@@ -35,26 +35,26 @@ export class UsersComponent implements OnInit {
     //   this.users = users;
 
 
-    this.productDataService.retrieveAllUsers().subscribe(
-      users => {
-        // console.log(response);
-        this.users = users;
-        console.log(users);
-      }
+    // this.productDataService.retrieveAllUsers().subscribe(
+    //   users => {
+    //     // console.log(response);
+    //     this.users = users;
+    //     console.log(users);
+    //   }
 
-    )
+    // )
 
 
-    // this.subscription = this.userService.getUsersViaREST().subscribe((users: IUser[]) => {
-    //   this.users = users;
-    //   console.log(users);
-    //   console.log(users[0].id);
-    //   console.log(users[0].username);
-    //   console.log(users[0].password);
-    //   console.log(users[1].id);
-    //   console.log(users[1].username);
-    //   console.log(users[1].password);
-    // });
+    this.subscription = this.userService.getUsersViaREST().subscribe((users: IUser[]) => {
+      this.users = users;
+      console.log(users);
+      console.log(users[0].id);
+      console.log(users[0].username);
+      console.log(users[0].password);
+      console.log(users[1].id);
+      console.log(users[1].username);
+      console.log(users[1].password);
+    });
   }
 
   ngOnDestroy() {

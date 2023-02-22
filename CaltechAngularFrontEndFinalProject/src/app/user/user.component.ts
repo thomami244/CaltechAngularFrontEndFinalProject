@@ -15,7 +15,7 @@ import { HookLogger } from './../decorators/class.decorator';
 })
 export class UserComponent implements OnInit {
 
-  @Input() user: IUser | undefined;
+  @Input() user!: IUser;
 
   constructor() { }
 

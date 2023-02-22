@@ -16,7 +16,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class UserService {
 
-  private _rootUrl: string = 'http://localhost:8080/users/';
+  private _rootUrl: string = 'http://localhost:8080/users';
   // private _postsUrl: string = 'http://jsonplaceholder.typicode.com/posts';
   // private prop: string = 'foo';
   // public propChanged: BehaviorSubject<string> = new BehaviorSubject<string>(this.prop);
@@ -49,7 +49,7 @@ export class UserService {
 
   getUsersViaREST(): Observable<IUser[]> {
     let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here');
-    return this.http.get<IUser[]>(this._rootUrl, { headers })
+    return this.http.get<IUser[]>(`${this._rootUrl}/all`, { headers })
       .pipe(
         map((users: any) => {
         return users.map((user: any) => {

@@ -24,10 +24,11 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     // this.users = this.activatedRoute.snapshot.data['users'];
-    this.users = this.userService.getUsers();
+    // this.users = this.userService.getUsers();
 
     this.subscription = this.userService.getUsersViaREST().subscribe((users: any) => {
       this.users = users;
+      console.log(users);
     });
   }
 

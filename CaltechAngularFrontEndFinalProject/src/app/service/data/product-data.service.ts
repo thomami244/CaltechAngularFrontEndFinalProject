@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IUser } from 'src/app/interfaces/user';
 import { Product } from 'src/app/list-product/list-product.component';
 
 @Injectable({
@@ -23,5 +24,9 @@ export class ProductDataService {
 
   createTodo(username: any, todo: Product) {
     return this.httpClient.post(`http://localhost:8080/users/${username}/todos`,todo);
+  }
+
+  retrieveAllUsers(){
+    return this.httpClient.get<IUser[]>(`http://localhost:8080/users/all`)
   }
 }

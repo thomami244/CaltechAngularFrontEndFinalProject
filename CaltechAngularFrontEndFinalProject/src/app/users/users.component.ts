@@ -1,6 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from './../service/user/user.service';
 import { Component, OnInit } from '@angular/core';
+import { ProductDataService } from '../service/data/product-data.service';
 
 import { IUser } from './../interfaces/user';
 
@@ -18,8 +19,13 @@ export class UsersComponent implements OnInit {
   subscription!: Subscription;
 
   constructor(
+
+    // public id: number,
+    // public username: string,
+    // public password: string,
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private productDataService: ProductDataService,
   ) { }
 
   ngOnInit() {
@@ -28,16 +34,27 @@ export class UsersComponent implements OnInit {
     // this.userService.getUsersViaREST().subscribe((users: IUser[]) => {
     //   this.users = users;
 
-    this.subscription = this.userService.getUsersViaREST().subscribe((users: IUser[]) => {
-      this.users = users;
-      console.log(users);
-      console.log(users[0].id);
-      console.log(users[0].username);
-      console.log(users[0].password);
-      console.log(users[1].id);
-      console.log(users[1].username);
-      console.log(users[1].password);
-    });
+
+    this.productDataService.retrieveAllUsers().subscribe(
+      users => {
+        // console.log(response);
+        this.users = users;
+        console.log(users);
+      }
+
+    )
+
+
+    // this.subscription = this.userService.getUsersViaREST().subscribe((users: IUser[]) => {
+    //   this.users = users;
+    //   console.log(users);
+    //   console.log(users[0].id);
+    //   console.log(users[0].username);
+    //   console.log(users[0].password);
+    //   console.log(users[1].id);
+    //   console.log(users[1].username);
+    //   console.log(users[1].password);
+    // });
   }
 
   ngOnDestroy() {

@@ -3,7 +3,8 @@
     Users List
   </h3>
   {{users}}
-
+  <!-- {{users[0].id}} -->
+<!-- console.log(users[0]) -->
   <ul class="list-group" *ngIf="users">
     <li class="list-group-item"
         *ngFor="let user of users">
@@ -13,4 +14,32 @@
 </div>
 <div class="col-md-8">
   <router-outlet></router-outlet>
+</div>
+
+
+
+<h1>My Todo's</h1>
+<h3>Todos 4</h3>
+<div class="container">
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>password</th>
+        <!-- <th>Update</th> -->
+      </tr>
+    </thead>
+
+      <tbody>
+        <tr *ngFor = "let user of users">
+          <td> {{user.id }}</td>
+          <td>{{user.username}}</td>
+          <td> {{user.password}}</td>
+          <!-- <td> <button (click) = "updateTodo(todo.id)" class=" btn btn-success">Update</button></td> -->
+        </tr>
+      </tbody>
+
+    </table>
+
 </div>

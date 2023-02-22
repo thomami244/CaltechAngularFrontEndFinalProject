@@ -2,7 +2,7 @@ import { Component, Injectable, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product} from '../list-product/list-product.component';
 // import { Todo } from '../list-todos/list-todos.component';
-// import { TodoDataService } from '../service/data/todo-data.service';
+import { ProductDataService } from '../service/data/product-data.service';
 
 
 @Component({
@@ -12,9 +12,10 @@ import { Product} from '../list-product/list-product.component';
 })
 
 @Injectable()
-export class ProductComponent {
-  id!: number
-  products: Product = new Product(1, 'Coca-Cola', 'fizzy drink', 'www.url', 'drinks', 1.99, 100, 0, 0, true);
+export class ProductComponent  {
+  id!: number;
+  // products: Product = new Product(1, 'Coca-Cola', 'fizzy drink', 'www.url', 'drinks', 1.99, 100, 0, 0, true);
+  products!: Product;
 
 
   // product_id!: number;
@@ -50,15 +51,15 @@ export class ProductComponent {
 //   // todo: Todo = Todo(1, '', false, new Date())
 //   // todo: Todo = new Todo(1,'Learn to Dance', false, new Date() )
 
-//   // constructor(private todoDataService:TodoDataService, private activatedRoute: ActivatedRoute, private router: Router ) { }
-//   // ngOnInit() {
-//   //   this.id = this.activatedRoute.snapshot.params[`id`];
-//   //   this.todo5 = new Todo(1, '', false, new Date());
-//   //   this.todoDataService.retrieveTodo(`vinodh`, this.id).subscribe(
-//   //      data => this.todo5 = data
-//   //     // data => console.log(data)
-//   //   )
-//   // }
+  // constructor(private productDataService:ProductDataService, private activatedRoute: ActivatedRoute, private router: Router ) { }
+  // ngOnInit() {
+  //   this.id = this.activatedRoute.snapshot.params[`id`];
+  //   this.todo5 = new Todo(1, '', false, new Date());
+  //   this.todoDataService.retrieveTodo(`vinodh`, this.id).subscribe(
+  //      data => this.todo5 = data
+  //     // data => console.log(data)
+  //   )
+  // }
 //   // saveTodo(){
 //   //   if ( this.id ==-1){
 //   //     this.todoDataService.createTodo('vinodh',this.todo5).subscribe(

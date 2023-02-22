@@ -1,4 +1,9 @@
+import { UserService } from './service/user/user.service';
+
+
+
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { AppendorPipe } from './pipes/appendor/appendor.pipe';
 
 
 @NgModule({
@@ -25,16 +31,21 @@ import { UserDetailsComponent } from './user-details/user-details.component';
     LoginComponent,
     UserComponent,
     UsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    AppendorPipe,
+    UsersComponent,
+    UserComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [FoodMenuComponent, ListProductComponent],
+  providers: [FoodMenuComponent, ListProductComponent, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

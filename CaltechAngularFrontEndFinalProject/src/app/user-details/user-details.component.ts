@@ -2,6 +2,7 @@ import { UserService } from './../service/user/user.service';
 import { IUser } from './../interfaces/user';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AppendorPipe } from '../pipes/appendor/appendor.pipe';
 
 @Component({
   selector: 'app-user-details',

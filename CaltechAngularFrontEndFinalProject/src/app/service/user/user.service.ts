@@ -48,18 +48,21 @@ export class UserService {
   }
 
   getUsersViaREST(): Observable<IUser[]> {
-    let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here');
-    return this.http.get<IUser[]>(`${this._rootUrl}/all`, { headers })
-      .pipe(
-        map((users: any) => {
-        return users.map((user: any) => {
-          return {
-            id: user.id,
-            username: user.username,
-            email: user.email
-          }
-        })
-      }));
+    return this.http.get<IUser[]>(`${this._rootUrl}/all`);
+
+
+    // let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here');
+    // return this.http.get<IUser[]>(`${this._rootUrl}/all`, { headers })
+    //   .pipe(
+    //     map((users: any) => {
+    //     return users.map((user: any) => {
+    //       return {
+    //         id: user.id,
+    //         username: user.username,
+    //         email: user.email
+    //       }
+    //     })
+    //   }));
   }
 
   createUser(user: IUser): Observable<IUser> {

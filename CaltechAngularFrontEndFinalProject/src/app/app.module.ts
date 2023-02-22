@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductComponent } from './product/product.component';
 import { ListProductComponent } from './list-product/list-product.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     FoodMenuComponent,
     NavbarComponent,
     ProductComponent,
-    ListProductComponent
+    ListProductComponent,
+    LoginComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

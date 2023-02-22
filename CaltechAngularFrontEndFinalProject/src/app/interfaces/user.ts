@@ -1,5 +1,4 @@
 
-
 interface IGeo {
   lat: string;
   lng: string;
@@ -21,11 +20,29 @@ interface ICompany {
 
 export interface IUser {
   id: number;
-  name: string;
+  // name: string;
   username?: string;
-  email: string;
+  password?: string;
+  email?: string;
   address?: IAddress;
   phone?: string;
   website?: string;
   company?: ICompany;
 }
+
+
+
+
+
+
+
+// export interface IUser {
+//   id: number;
+//   name: string;
+//   username?: string;
+//   email: string;
+//   address?: IAddress;
+//   phone?: string;
+//   website?: string;
+//   company?: ICompany;
+// }

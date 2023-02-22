@@ -4,8 +4,8 @@
 
 <div *ngIf="user">
   <span>UserId: {{ user.id }}</span><br>
-  <span>User Name: {{ user.name }}</span><br>
-  <span>User Email: <a href="{{ user.email | appendor: 'pre': 'mailto://' }}">{{ user.email }}</a></span><br>
+  <span>User Name: {{ user.username }}</span><br>
+  <!-- <span>User Email: <a href="{{ user.email | appendor: 'pre': 'mailto://' }}">{{ user.email }}</a></span><br> -->
   <!-- <span>User Phone: <a href="{{ user.phone | appendor: 'pre': 'tel://' }}">{{ user.phone }}</a></span><br> -->
 </div>
 <hr>

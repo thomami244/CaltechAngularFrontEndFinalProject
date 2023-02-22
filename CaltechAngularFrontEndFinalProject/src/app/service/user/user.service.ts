@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 // import 'rxjs/add/operator/map';
 // import 'rxjs/add/operator/retry';
@@ -15,17 +16,17 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UserService {
 
-  private _rootUrl: string = 'http://jsonplaceholder.typicode.com/users';
-  private _postsUrl: string = 'http://jsonplaceholder.typicode.com/posts';
-  private prop: string = 'foo';
-  public propChanged: BehaviorSubject<string> = new BehaviorSubject<string>(this.prop);
+  private _rootUrl: string = 'http://localhost:8080/users/';
+  // private _postsUrl: string = 'http://jsonplaceholder.typicode.com/posts';
+  // private prop: string = 'foo';
+  // public propChanged: BehaviorSubject<string> = new BehaviorSubject<string>(this.prop);
 
   private _users: IUser[] = [
-    { id: 1, name: 'John Doe', email: 'john.doe@example.com' },
-    { id: 2, name: 'Jane Doe', email: 'jane.doe@example.com' },
-    { id: 3, name: 'Jacob Riglin', email: 'jacob.riglin@example.com' },
-    { id: 4, name: 'Sam Kolder', email: 'sam.kolder@example.com' },
-    { id: 5, name: 'Jeremy Jauncey', email: 'jeremy.jauncey@example.com' },
+    { id: 1, username: 'JohnDoe', email: 'john.doe@example.com' },
+    { id: 2, username: 'JaneDoe', email: 'jane.doe@example.com' },
+    { id: 3, username: 'JacobRiglin', email: 'jacob.riglin@example.com' },
+    { id: 4, username: 'SamKolder', email: 'sam.kolder@example.com' },
+    { id: 5, username: 'JeremyJauncey', email: 'jeremy.jauncey@example.com' },
   ];
 
   constructor(private http: HttpClient) { }
@@ -46,19 +47,20 @@ export class UserService {
     return this.http.get<IUser>(`${this._rootUrl}/${id}`);
   }
 
-  // getUsersViaREST(): Observable<IUser[]> {
-  //   let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here');
-  //   return this.http.get<IUser[]>(this._rootUrl, { headers })
-  //     .map((users: any) => {
-  //       return users.map((user: any) => {
-  //         return {
-  //           id: user.id,
-  //           name: user.name,
-  //           email: user.email
-  //         }
-  //       })
-  //     });
-  // }
+  getUsersViaREST(): Observable<IUser[]> {
+    let headers = new HttpHeaders().set('Authorization', 'Bearer your-access-token-here');
+    return this.http.get<IUser[]>(this._rootUrl, { headers })
+      .pipe(
+        map((users: any) => {
+        return users.map((user: any) => {
+          return {
+            id: user.id,
+            username: user.username,
+            email: user.email
+          }
+        })
+      }));
+  }
 
   createUser(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(this._rootUrl, user);
@@ -82,12 +84,12 @@ export class UserService {
   //     });
   // }
 
-  getProp(): string {
-    return this.prop;
-  }
+  // getProp(): string {
+  //   return this.prop;
+  // }
 
-  setProp(prop: string) {
-    this.prop = prop;
-    this.propChanged.next(this.prop);
-  }
+  // setProp(prop: string) {
+  //   this.prop = prop;
+  //   this.propChanged.next(this.prop);
+  // }
 }

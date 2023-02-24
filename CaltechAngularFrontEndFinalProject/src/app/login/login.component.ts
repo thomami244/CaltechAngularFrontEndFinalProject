@@ -35,6 +35,8 @@ export class LoginComponent implements OnInit  {
 
   users!: IUser[] ;
   subscription!: Subscription;
+  loggedIn:Boolean = false;
+
   @Input() username: String = "admin";
 
   @Input() password:String = "password";
@@ -77,8 +79,12 @@ export class LoginComponent implements OnInit  {
 
 console.log(this.username);
 console.log(this.password);
+// if (user) this.loggedIn === true;
+if (!user) console.log('Username or password is incorrect');
 
     if (!user) return 'Username or password is incorrect';
+    this.loggedIn = true;
+    console.log(this.loggedIn);
     return ({
         id: user.id,
         username: user.username,

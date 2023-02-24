@@ -5,7 +5,21 @@
 <div *ngIf="user">
   <span>UserId: {{ user.id }}</span><br>
   <span>User Name: {{ user.username }}</span><br>
-  <span>User Password: {{ user.password }}</span><br>
+  <span>Current Password: {{ user.password }}</span><br><br><br>
+  <span>Update Current Password:
+
+    <!-- <label for="quantity"></label>
+    <input id="quantity" type="text" [formControl]="quantity"> -->
+
+
+    <!-- <label>0</label> -->
+
+    <!-- <button (click)="updateItem(product.productname)" class="btn btn-info">Update</button> -->
+
+
+    <input type="text" class="form-control" [(ngModel)]="user.password">
+    <!-- {{product.productquantity}} -->
+  </span><br>
   <!-- <span>User Email: <a href="{{ user.email | appendor: 'pre': 'mailto://' }}">{{ user.email }}</a></span><br> -->
   <!-- <span>User Phone: <a href="{{ user.phone | appendor: 'pre': 'tel://' }}">{{ user.phone }}</a></span><br> -->
 </div>

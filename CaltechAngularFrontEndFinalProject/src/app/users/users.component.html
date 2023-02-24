@@ -2,7 +2,7 @@
   <h3>
     Users List
   </h3>
-  {{users}}
+
   <!-- {{users[0].id}} -->
 <!-- console.log(users[0]) -->
   <ul class="list-group" *ngIf="users">
@@ -12,13 +12,15 @@
     </li>
   </ul>
 </div>
+<br><br><br>
 <div class="col-md-8">
   <router-outlet></router-outlet>
 </div>
 
 
 
-<h1>My Todo's</h1>
+
+<!-- <h1>My Todo's</h1>
 <h3>Todos 4</h3>
 <div class="container">
   <table class = "table">
@@ -28,7 +30,7 @@
         <th>username</th>
         <th>password</th>
         <!-- <th>Update</th> -->
-      </tr>
+      <!-- </tr>
     </thead>
 
       <tbody>
@@ -37,9 +39,9 @@
           <td>{{user.username}}</td>
           <td> {{user.password}}</td>
           <!-- <td> <button (click) = "updateTodo(todo.id)" class=" btn btn-success">Update</button></td> -->
-        </tr>
-      </tbody>
+        <!-- </tr>
+      </tbody> -->
 
-    </table>
+    <!-- </table> -->
 
-</div>
+<!-- </div> -->

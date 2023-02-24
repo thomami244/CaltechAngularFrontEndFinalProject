@@ -1,12 +1,30 @@
 <div class="container text-center">
   <!-- <small  *ngIf='invalidLogin'>{{errorMessage}}</small> -->
   <!-- <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div> -->
-  <div>
-    Login
-    User Name: <input type ="text" name = "username" [(ngModel)] = "username">
-    Password: <input type = "password" name= "password" [(ngModel)]= "password">
-    <button (click) = handleLogin() class="btn btn-success">Login</button>
-  </div>
+  <!-- <div>
+    <button *ngIf="!this.isAuthenticated" type="button" routerLink="/register" class="btn btn-info margin-right">{{ 'Register' | translate }}</button>
+    <button *ngIf="!this.isAuthenticated" type="button" routerLink="/login" class="btn btn-success">{{ 'Login' | translate }}</button>
+</div> -->
+<!-- <div *ngIf="this.isAuthenticated">
+    Users from secure api end point:
+    <ul>
+        <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+    </ul>
+</div> -->
+
+
+<div *ngIf="!this.loggedIn">
+  Login
+  User Name: <input type ="text" name = "username" [(ngModel)] = "username">
+  Password: <input type = "password" name= "password" [(ngModel)]= "password">
+  <button (click) = handleLogin() class="btn btn-success">Login</button>
+</div>
+
+
+<div *ngIf="this.loggedIn">
+  Welcome {{username}}
+
+</div>
 
 
 </div>

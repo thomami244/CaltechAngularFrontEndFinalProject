@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit  {
   users!: IUser[] ;
   subscription!: Subscription;
   loggedIn:Boolean = false;
+  adminLoggedIn:Boolean = false;
 
   @Input() username: String = "admin";
 
@@ -83,8 +84,17 @@ console.log(this.password);
 if (!user) console.log('Username or password is incorrect');
 
     if (!user) return 'Username or password is incorrect';
+
+    console.log("conditional test: " + user.username == "admin");
+    if (user.username == "admin") this.adminLoggedIn = true;
+
+    console.log("condition: " + user.username == "admin");
+    console.log("admin is logged in " + this.adminLoggedIn);
+
     this.loggedIn = true;
-    console.log(this.loggedIn);
+    console.log("user is logged in " + this.loggedIn);
+    console.log("username: " + user.username);
+
     return ({
         id: user.id,
         username: user.username,

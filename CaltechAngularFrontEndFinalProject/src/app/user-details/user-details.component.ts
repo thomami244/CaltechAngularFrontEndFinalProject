@@ -42,8 +42,6 @@ export class UserDetailsComponent implements OnInit {
   }
 
   updateUser() {
-    this.user.username = 'SamKolder';
-    this.user.email = 'sam.kolder@example.com';
     this.userService.updateUser(this.user)
     .subscribe(user => {
       console.log('Got the Create Response as : ', user);

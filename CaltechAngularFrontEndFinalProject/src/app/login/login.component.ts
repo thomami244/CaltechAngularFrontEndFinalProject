@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit  {
 
   users!: IUser[] ;
   subscription!: Subscription;
-  username: String = "";
+  username: String = "admin";
 
-  password:String = "";
+  password:String = "password";
 
   constructor(
 
@@ -62,9 +62,9 @@ export class LoginComponent implements OnInit  {
   }
 
    handleLogin() {
-    username: "admin";
+    // username: "admin";
 
-    password: "password"
+    // password: "password"
 
 
     // const { username, password } = body;

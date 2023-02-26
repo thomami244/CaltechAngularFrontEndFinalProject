@@ -1,21 +1,25 @@
-<div class="col-md-4">
-  <h3>
-    Users List
-  </h3>
+<div class="col-md-6">
+
 
   <!-- {{users[0].id}} -->
 <!-- console.log(users[0]) -->
   <ul class="list-group" *ngIf="users">
+    <h3>
+      Admin Panel: Edit Users List
+     </h3>
     <li class="list-group-item"
         *ngFor="let user of users">
       <app-user [user]="user"></app-user>
     </li>
   </ul>
-</div>
+
 <br><br><br>
-<div class="col-md-8">
+
   <router-outlet></router-outlet>
+  <br>
+ <a class="router-link" [routerLink]="['/']"> Return to products page</a>
 </div>
+
 
 
 

@@ -1,6 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from './../service/user/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ProductDataService } from '../service/data/product-data.service';
 
 import { IUser } from './../interfaces/user';
@@ -17,6 +17,8 @@ export class UsersComponent implements OnInit {
 
   users: IUser[] | undefined;
   subscription!: Subscription;
+  @Input() adminLoggedIn:Boolean = false;
+  @Output() adminLoggedInChange:Boolean = false;
   param: any;
 
   constructor(
@@ -38,6 +40,7 @@ export class UsersComponent implements OnInit {
 
 
   ngOnInit() {
+
     // this.users = this.activatedRoute.snapshot.data['users'];
     // this.users = this.userService.getUsers();
     // this.userService.getUsersViaREST().subscribe((users: IUser[]) => {

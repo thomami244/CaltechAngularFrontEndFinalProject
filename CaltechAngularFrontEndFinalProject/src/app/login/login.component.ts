@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit  {
   users!: IUser[] ;
   subscription!: Subscription;
   loggedIn:Boolean = false;
-  adminLoggedIn:Boolean = false;
+  adminLoggedIn:Boolean = true;
 
   @Input() username: String = "admin";
 

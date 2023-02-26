@@ -17,6 +17,7 @@ export class UsersComponent implements OnInit {
 
   users: IUser[] | undefined;
   subscription!: Subscription;
+  param: any;
 
   constructor(
 
@@ -26,7 +27,15 @@ export class UsersComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
     private productDataService: ProductDataService,
-  ) { }
+  ) {
+    this.activatedRoute.paramMap.subscribe((map) => {
+      console.log("MAP", map.get("adminLoggedIn"));
+      this.param = map.get("adminLoggedIn");
+    })
+  }
+
+
+
 
   ngOnInit() {
     // this.users = this.activatedRoute.snapshot.data['users'];

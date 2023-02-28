@@ -49,12 +49,13 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.paramMap.subscribe((map) => {
-      console.log("placeholder");
-      console.log("MAP", map.get("adminLoggedIn"));
-      this.param = map.get("adminLoggedIn");
-      console.log("users component receive service" + this.param)
-    });
+    // if (logincomponent.username == "admin") this.adminLoggedIn = true;
+    // this.activatedRoute.paramMap.subscribe((map) => {
+    //   console.log("placeholder");
+    //   console.log("MAP", map.get("adminLoggedIn"));
+    //   this.param = map.get("adminLoggedIn");
+    //   console.log("users component receive service" + this.param)
+    // });
 
     // this.logincomponent.data$.subscribe(data => this.newData = data);
 
@@ -66,11 +67,11 @@ export class UsersComponent implements OnInit {
     //     };
 
 
-    // this.activatedRoute.paramMap.subscribe((map) => {
-    //   console.log("MAP", map.get("adminLoggedIn"));
-    //   this.param = map.get("LoginComponent.adminLoggedIn");
-    //   console.log("users component receive service" + this.param)
-    // });
+    this.activatedRoute.paramMap.subscribe((map) => {
+      console.log("MAP", map.get("adminLoggedIn"));
+      this.param = map.get("LoginComponent.adminLoggedIn");
+      console.log("users component receive service " + this.param)
+    });
 
 
     // this.param.currentUpdateApprovalMessage.subscribe((msg: any) => this.message = msg);

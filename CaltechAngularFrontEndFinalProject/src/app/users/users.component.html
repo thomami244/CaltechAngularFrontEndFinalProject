@@ -1,13 +1,16 @@
 <div class="col-md-6">
-  <p> {{param}}</p>
+  <!-- <p> {{param}}</p>
   <p> {{logincomponent.username}}</p>
   <p> {{logincomponent.password}}</p>
-  <p> {{logincomponent.loggedIn}}</p>
-  <p> {{logincomponent.adminLoggedIn}}</p>
+  <p> {{logincomponent.loggedIn}}</p>-->
+  <!-- <p> {{adminLoggedIn}}</p> -->
+  <p> {{logincomponent.username}}</p>
+  <p> {{logincomponent.username =='admin'}}</p>
 
 
   <!-- {{users[0].id}} -->
 <!-- console.log(users[0]) -->
+<div *ngIf="logincomponent.username =='admin'">
   <ul class="list-group" *ngIf="users">
     <h3>
       Admin Panel: Edit Users List
@@ -25,7 +28,7 @@
  <a class="router-link" [routerLink]="['/']"> Return to products page</a>
 </div>
 
-
+<div *ngIf="logincomponent.username =='admin'"></div>
 
 
 

@@ -111,6 +111,7 @@ if (!user) console.log('Username or password is incorrect');
         id: user.id,
         username: user.username,
         password: user.password,
+        adminLoggedIn: this.adminLoggedIn,
         // token: 'fake-jwt-token'
     })
 

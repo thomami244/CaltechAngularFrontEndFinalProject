@@ -22,6 +22,7 @@
 
 <div *ngIf="this.adminLoggedIn ">
   Welcome {{username}}
+  {{adminLoggedIn}}
   <!-- <a href="/users" (click)="false">Click Me</a> -->
   <a [routerLink]="['/users']"> Update Users</a>
   <!-- <a [routerLink]="/users"

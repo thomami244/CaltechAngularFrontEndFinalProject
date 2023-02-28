@@ -53,6 +53,7 @@ export class ListProductComponent implements OnInit{
   productdescription: string =''
   productprice: number =0
   availablequantity: number =0
+
   @Input() category: string ="meals"
   @Input() productquantity: number =0
   @Output()productquantityChange: number =0

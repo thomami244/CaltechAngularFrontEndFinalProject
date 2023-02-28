@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 // import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
+import { UsersComponent } from '../users/users.component';
 
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent,  HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
@@ -13,11 +14,13 @@ import { UserService } from './../service/user/user.service';
 import { IUser } from './../interfaces/user';
 
 import { Subscription } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 
 
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
 
 
 // array in local storage for registered users
@@ -33,14 +36,18 @@ import { CommonModule } from '@angular/common';
 @Injectable()
 export class LoginComponent implements OnInit  {
 
+
   users!: IUser[] ;
   subscription!: Subscription;
   loggedIn:Boolean = false;
-  adminLoggedIn:Boolean = true;
+  // adminLoggedIn:Boolean = true;
 
   @Input() username: String = "admin";
 
   @Input() password:String = "password";
+  @Input() adminLoggedIn:Boolean = false;
+  @Output() adminLoggedInChange:Boolean = false;
+  // adminLoggedIn$:any = this.adminLoggedIn.asObservable();
 
   constructor(
 
@@ -49,6 +56,7 @@ export class LoginComponent implements OnInit  {
     // public password: string,
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
+    // public adminLoggedIn:Boolean = false,
     // private productDataService: ProductDataService,
   ) { }
 
@@ -67,6 +75,10 @@ export class LoginComponent implements OnInit  {
     });
 
   }
+
+  getData(){
+    this.adminLoggedIn;
+    }
 
    handleLogin() {
     // username: "admin";
@@ -103,6 +115,10 @@ if (!user) console.log('Username or password is incorrect');
     })
 
   }
+
+  updateApprovalMessage(message: Boolean) {
+    this.adminLoggedIn
+    }
 
 
 

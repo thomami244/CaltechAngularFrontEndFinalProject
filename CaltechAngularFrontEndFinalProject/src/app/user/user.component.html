@@ -1,2 +1,5 @@
-<a [routerLink]="[user.id]"> {{ user.username }}</a>
+<!-- <a [routerLink]="[user.id]"> {{ user.username }}</a> -->
+<!-- <app-user [user]="user"></app-user> -->
+<!-- <app-user [user]="user"></app-user> -->
+<a [routerLink]="['/users', user.id]"> {{ user.username }}</a>
 <!-- <a> {{ user.id }} {{ user.username }}</a> -->

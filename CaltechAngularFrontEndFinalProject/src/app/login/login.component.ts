@@ -43,9 +43,12 @@ export class LoginComponent implements OnInit  {
   loggedIn:Boolean = false;
   // adminLoggedIn:Boolean = true;
 
-  @Input() username: String = "admin";
+  @Input() username: String = "";
+  @Output() usernameChange: String = "";
 
-  @Input() password:String = "password";
+  @Input() password:String = "";
+  @Output() passwordChange:String = "";
+
   @Input() adminLoggedIn:Boolean = false;
   @Output() adminLoggedInChange:Boolean = false;
 
@@ -79,11 +82,17 @@ export class LoginComponent implements OnInit  {
 
   }
 
-  getData(){
-    this.adminLoggedIn;
-    }
 
-   handleLogin() {
+  // getUsername(){
+  //   return this.username;
+  //   }
+
+  // getPassword(){
+  //   return this.password;
+  //   }
+
+
+   handleLogin(username: String, password: String) {
     // username: "admin";
 
     // password: "password"
@@ -109,6 +118,9 @@ if (!user) console.log('Username or password is incorrect');
     this.loggedIn = true;
     console.log("user is logged in " + this.loggedIn);
     console.log("username: " + user.username);
+    this.username = username;
+    this.password = password;
+
 
     return ({
         id: user.id,

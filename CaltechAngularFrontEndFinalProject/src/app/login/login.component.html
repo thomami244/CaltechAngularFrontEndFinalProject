@@ -17,7 +17,7 @@
   Login
   User Name: <input type ="text" name = "username" [(ngModel)] = "username">
   Password: <input type = "password" name= "password" [(ngModel)]= "password">
-  <button (click) = handleLogin() class="btn btn-success">Login</button>
+  <button (click) = "handleLogin(username, password)" class="btn btn-success">Login</button>
 </div>
 
 <div *ngIf="this.adminLoggedIn ">
@@ -31,7 +31,11 @@
 </div>
 
 
+
+
 <div *ngIf="this.loggedIn">
   Welcome {{username}}
 
 </div>
+
+<app-users [adminLoggedIn]="adminLoggedIn"></app-users>

@@ -8,13 +8,14 @@
   <p> {{logincomponent.username =='admin'}}</p> -->
   <!-- Welcome {{IUser.username}} -->
   <!-- {{IUser.adminLoggedIn}} -->
-  {{this.param}}
-  <p> {{logincomponent.username}}</p>
+  <!-- {{this.param}}
+  <p> {{logincomponent.username}}</p> -->
 
 
   <!-- {{users[0].id}} -->
 <!-- console.log(users[0]) -->
-<div *ngIf="logincomponent.username =='admin'">
+
+<!-- <div *ngIf="logincomponent.username =='admin'"> -->
   <ul class="list-group" *ngIf="users">
     <h3>
       Admin Panel: Edit Users List
@@ -30,11 +31,11 @@
   <router-outlet></router-outlet>
   <br>
  <a class="router-link" [routerLink]="['/']"> Return to products page</a>
-</div>
+<!-- </div> -->
 
-<div *ngIf="logincomponent.username =='admin'"></div>
+<!-- <div *ngIf="logincomponent.username =='admin'"></div> -->
 
-
+{{adminLoggedIn}}
 
 <!-- <h1>My Todo's</h1>
 <h3>Todos 4</h3>

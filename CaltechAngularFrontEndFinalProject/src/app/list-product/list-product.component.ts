@@ -60,8 +60,8 @@ export class ListProductComponent implements OnInit{
 
   @Input() category: string ="meals"
 
-  @Input() username: string =""
-  @Input() password: string =""
+  @Input() username!: string
+  @Input() password!: string
   @Input() productquantity: number =0
   @Output()productquantityChange: number =0
 

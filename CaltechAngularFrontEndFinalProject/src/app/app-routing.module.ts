@@ -8,7 +8,7 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 const routes: Routes = [
   // {path: '', component:LoginComponent},
-  { path: '', component: FoodMenuComponent },
+  // { path: '', component: FoodMenuComponent },
   {path: 'login', component:LoginComponent},
   // {path: 'welcome/:name', component:WelcomeComponent, canActivate:[RouteGuardService]},
   // {path: 'todos', component:ListTodosComponent, canActivate:[RouteGuardService]},

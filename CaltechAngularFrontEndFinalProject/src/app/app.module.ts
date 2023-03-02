@@ -16,6 +16,7 @@ import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { AppendorPipe } from './pipes/appendor/appendor.pipe';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AppendorPipe } from './pipes/appendor/appendor.pipe';
     UsersComponent,
     UserComponent,
     UserDetailsComponent,
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,

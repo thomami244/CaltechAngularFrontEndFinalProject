@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FoodMenuComponent } from '../food-menu/food-menu.component';
+import { LoginComponent } from '../login/login.component';
+import { ProductDataService } from '../service/data/product-data.service';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
 @NgModule({
@@ -13,6 +15,7 @@ import { FoodMenuComponent } from '../food-menu/food-menu.component';
   ],
   declarations: []
   }
+
 )
 
 
@@ -38,7 +41,8 @@ export class Product {
 @Component({
   selector: 'app-list-product',
   templateUrl: './list-product.component.html',
-  styleUrls: ['./list-product.component.css']
+  styleUrls: ['./list-product.component.css'],
+  providers: [LoginComponent, ProductDataService],
 })
 
 
@@ -55,6 +59,9 @@ export class ListProductComponent implements OnInit{
   availablequantity: number =0
 
   @Input() category: string ="meals"
+
+  @Input() username: string =""
+  @Input() password: string =""
   @Input() productquantity: number =0
   @Output()productquantityChange: number =0
 
@@ -62,7 +69,9 @@ export class ListProductComponent implements OnInit{
   @Output()producttotalChange: number =0
 
   constructor(
-    public foodmenucomponent: FoodMenuComponent
+    public foodmenucomponent: FoodMenuComponent,
+    public logincomponent: LoginComponent,
+
 
   ){}
 
@@ -76,6 +85,7 @@ export class ListProductComponent implements OnInit{
     console.log(productname);
     console.log(productquantity);
     this.producttotal = productquantity * productprice;
+
     // this.producttotal =  (Math.round(this.producttotal* 100 )/100).toFixed(2);
 
     console.log(this.producttotal)

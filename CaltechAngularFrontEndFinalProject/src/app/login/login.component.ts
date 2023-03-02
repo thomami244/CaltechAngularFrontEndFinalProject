@@ -30,7 +30,8 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [UserService],
 })
 
 @Injectable()
@@ -47,6 +48,8 @@ export class LoginComponent implements OnInit  {
   @Input() password:String = "password";
   @Input() adminLoggedIn:Boolean = false;
   @Output() adminLoggedInChange:Boolean = false;
+
+
   // adminLoggedIn$:any = this.adminLoggedIn.asObservable();
 
   constructor(

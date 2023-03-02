@@ -24,6 +24,7 @@ export class UsersComponent implements OnInit {
   param!: any;
   message: any;
   newData: any;
+  // adminLoggedIn = logincomponent.adminLoggedIn;
 
   constructor(
 
@@ -49,6 +50,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
+
     // if (logincomponent.username == "admin") this.adminLoggedIn = true;
     // this.activatedRoute.paramMap.subscribe((map) => {
     //   console.log("placeholder");

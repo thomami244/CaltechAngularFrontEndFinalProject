@@ -42,7 +42,7 @@ import { AppendorPipe } from './pipes/appendor/appendor.pipe';
     FormsModule,
     HttpClientModule
   ],
-  providers: [FoodMenuComponent, ListProductComponent, UserService],
+  providers: [FoodMenuComponent, ListProductComponent, UserService, LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

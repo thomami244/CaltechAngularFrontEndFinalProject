@@ -26,7 +26,10 @@ export class ProductDataService {
     return this.httpClient.post(`http://localhost:8080/users/${username}/todos`,todo);
   }
 
-  retrieveAllUsers(){
-    return this.httpClient.get<IUser[]>(`http://localhost:8080/users/all`)
+  // retrieveAllUsers(){
+  //   return this.httpClient.get<IUser[]>(`http://localhost:8080/users/all`)
+  // }
+  retrieveAllProducts(){
+    return this.httpClient.get<IUser[]>(`http://localhost:8080/products/all`)
   }
 }

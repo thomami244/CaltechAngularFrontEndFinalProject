@@ -4,7 +4,9 @@ import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common';
 import { FoodMenuComponent } from '../food-menu/food-menu.component';
 import { LoginComponent } from '../login/login.component';
+import { ProductComponent } from '../product/product.component';
 import { ProductDataService } from '../service/data/product-data.service';
+import { Subscription } from 'rxjs';
 // import { TodoDataService } from '../service/data/todo-data.service';
 
 @NgModule({
@@ -71,7 +73,7 @@ export class ListProductComponent implements OnInit{
   constructor(
     public foodmenucomponent: FoodMenuComponent,
     public logincomponent: LoginComponent,
-
+    public productdataservice: ProductDataService,
 
   ){}
 
@@ -99,7 +101,21 @@ export class ListProductComponent implements OnInit{
     // });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: Product[]) => {
+      this.users = users;
+      console.log(users);
+      console.log(users[0].id);
+      console.log(users[0].username);
+      console.log(users[0].password);
+      console.log(users[1].id);
+      console.log(users[1].username);
+      console.log(users[1].password);
+    });
+
+
+
+  }
 
   products: Product[] = [
     {product_id:1,

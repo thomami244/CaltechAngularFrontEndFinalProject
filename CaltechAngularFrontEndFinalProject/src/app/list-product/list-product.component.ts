@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FoodMenuComponent } from '../food-menu/food-menu.component';
@@ -7,6 +7,7 @@ import { LoginComponent } from '../login/login.component';
 import { ProductComponent } from '../product/product.component';
 import { ProductDataService } from '../service/data/product-data.service';
 import { Subscription } from 'rxjs';
+
 // import { TodoDataService } from '../service/data/todo-data.service';
 
 @NgModule({
@@ -23,6 +24,8 @@ import { Subscription } from 'rxjs';
 
 @Injectable()
 export class Product {
+  activatedRoute!: ActivatedRoute,
+
   constructor (
     @Inject(String) public product_id : number,
     @Inject(String)  public productname : string,
@@ -53,6 +56,7 @@ export class ListProductComponent implements OnInit{
   //   this.refreshProducts()
   // }
   // products: Product[] =[]
+  products = [Product];
   product_id: number =0
   quantity = new FormControl('');
   productname: string =''
@@ -103,65 +107,74 @@ export class ListProductComponent implements OnInit{
 
   ngOnInit(): void {
     this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: Product[]) => {
-      this.users = users;
-      console.log(users);
-      console.log(users[0].id);
-      console.log(users[0].username);
-      console.log(users[0].password);
-      console.log(users[1].id);
-      console.log(users[1].username);
-      console.log(users[1].password);
+      this.products = products;
+      console.log(products);
+      console.log(products[0].product_id);
+      console.log(products[0].productname);
+      console.log(products[0].productdescription);
+      console.log(products[0].productURL);
+      console.log(products[0].productcategory);
+      console.log(products[0].productprice);
+      console.log(products[0].availablequantity);
+      console.log(products[0].productquantity);
+      console.log(products[0].producttotal);
+      console.log(products[0].isActivated);
+
+
+      console.log(products[1].product_id);
+      console.log(products[1].productname);
+      console.log(products[1].productdescription);
     });
 
 
 
   }
 
-  products: Product[] = [
-    {product_id:1,
-      productname: 'Coca-Cola',
-      productdescription: 'Fizzy Drink',
-      productURL: 'www.coca-cola.com',
-      productcategory: 'drinks',
-      productprice: 1.99,
-      availablequantity: 100,
-      productquantity: 0,
-      producttotal: 0,
-      isActivated: true},
+  // products: Product[] = [
+  //   {product_id:1,
+  //     productname: 'Coca-Cola',
+  //     productdescription: 'Fizzy Drink',
+  //     productURL: 'www.coca-cola.com',
+  //     productcategory: 'drinks',
+  //     productprice: 1.99,
+  //     availablequantity: 100,
+  //     availablequantity: 0,
+  //     producttotal: 0,
+  //     isActivated: true},
 
-    { product_id:2,
-      productname: 'burghers',
-      productdescription: 'description burghers',
-      productURL: 'www.burghers',
-      productcategory: 'meals',
-      productprice: 9.99,
-      availablequantity: 20,
-      productquantity: 0,
-      producttotal: 0,
-      isActivated: true},
+  //   { product_id:2,
+  //     productname: 'burghers',
+  //     productdescription: 'description burghers',
+  //     productURL: 'www.burghers',
+  //     productcategory: 'meals',
+  //     productprice: 9.99,
+  //     availablequantity: 20,
+  //     productquantity: 0,
+  //     producttotal: 0,
+  //     isActivated: true},
 
-      { product_id:3,
-        productname: 'Potato wedges',
-        productdescription: 'potato wedges with great flavor',
-        productURL: 'www.potatowedges.com',
-        productcategory: 'sides',
-        productprice: 2.99,
-        availablequantity: 15,
-        productquantity: 0,
-        producttotal: 0,
-        isActivated: true},
+  //     { product_id:3,
+  //       productname: 'Potato wedges',
+  //       productdescription: 'potato wedges with great flavor',
+  //       productURL: 'www.potatowedges.com',
+  //       productcategory: 'sides',
+  //       productprice: 2.99,
+  //       availablequantity: 15,
+  //       productquantity: 0,
+  //       producttotal: 0,
+  //       isActivated: true},
 
-        { product_id:4,
-          productname: 'Seared fish',
-          productdescription: 'Oven-baked fish in olive oil',
-          productURL: 'www.fishnchipse.com',
-          productcategory: 'meals',
-          productprice: 15.99,
-          availablequantity: 9,
-          productquantity: 0,
-          producttotal: 0,
-          isActivated: true}
-  ]
+  //       { product_id:4,
+  //         productname: 'Seared fish',
+  //         productdescription: 'Oven-baked fish in olive oil',
+  //         productURL: 'www.fishnchipse.com',
+  //         productcategory: 'meals',
+  //         productprice: 15.99,
+  //         availablequantity: 9,
+  //         productquantity: 0,
+  //         producttotal: 0,
+  //         isActivated: true}
+  // ]
 
 }
 

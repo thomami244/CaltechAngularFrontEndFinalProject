@@ -3,9 +3,9 @@ import { IProduct } from './../interfaces/product';
 import { HookLogger } from './../decorators/class.decorator';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
 })
 @HookLogger({
   hooks: [

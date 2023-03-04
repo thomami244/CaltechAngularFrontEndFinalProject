@@ -29,7 +29,6 @@ import { Observable } from 'rxjs';
 
 )
 
-
 export class ListProductComponent implements OnInit {
 
   products: IProduct[] | undefined;
@@ -69,7 +68,7 @@ export class ListProductComponent implements OnInit {
 
 
 
-    this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: Product[]) => {
+    this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
       this.products = products;
       console.log(products);
       console.log(products[0].product_id);

@@ -1,11 +1,5 @@
 import { Component, OnInit, HostListener,NgModule, Injectable, Inject, Input, Output } from '@angular/core';
-import { Router } from '@angular/router';
-// import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
-import { UsersComponent } from '../users/users.component';
 
-import { HttpRequest, HttpResponse, HttpHandler, HttpEvent,  HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from './../service/user/user.service';
@@ -15,8 +9,13 @@ import { IUser } from './../interfaces/user';
 
 import { Subscription } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
+// import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
+import { UsersComponent } from '../users/users.component';
 
-
+import { HttpRequest, HttpResponse, HttpHandler, HttpEvent,  HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

@@ -22,6 +22,7 @@ import { IUser } from './interfaces/user';
 import { IProduct } from './interfaces/product';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { IProduct } from './interfaces/product';
     UserComponent,
     UserDetailsComponent,
     AdminPanelComponent,
+    ListProductComponent,
   ],
   imports: [
     BrowserModule,

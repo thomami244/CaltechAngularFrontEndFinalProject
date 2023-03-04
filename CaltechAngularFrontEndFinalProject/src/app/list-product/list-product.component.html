@@ -1,7 +1,5 @@
 <div class="container">
-
-
-  <!-- <table class = "table">
+  <table class = "table">
     <thead>
       <tr>
         <th>Name</th>
@@ -13,7 +11,6 @@
         <th>Total</th>
       </tr>
     </thead>
-
       <tbody>
         <tr *ngFor = "let product of products">
           <td> {{product.productname }}</td>
@@ -21,22 +18,15 @@
           <td> {{product.productprice}}</td>
           <td> {{product.availablequantity}}</td>
           <td>
-
-
-
-
             <input type="text" class="form-control" [(ngModel)]="product.productquantity">
-
           </td>
           <td>
           <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, product.productquantity)"> Update</button>
-
             </td>
-
           <td >{{product.producttotal}} </td>
         </tr>
-      </tbody> -->
-    <!-- </table> -->
+      </tbody>
+     </table>
 {{foodmenucomponent.category}}
 {{username}}
 <!-- {{users.username}} -->
@@ -47,6 +37,4 @@
 {{logincomponent.password}}
 <!-- {{adminLoggedIn}}
 {{logincomponent.adminLoggedIn}} -->
-
-
 </div>

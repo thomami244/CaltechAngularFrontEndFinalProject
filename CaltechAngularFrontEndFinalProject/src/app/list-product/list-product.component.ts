@@ -59,7 +59,7 @@ export class ListProductComponent implements OnInit {
 
 
   constructor(
-
+    public foodmenucomponent: FoodMenuComponent,
     private activatedRoute: ActivatedRoute,
     private productdataservice: ProductDataService,
 
@@ -94,41 +94,6 @@ export class ListProductComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-}
-function getData() {
-  throw new Error('Function not implemented.');
-}
-
-
-export class ListProductComponent implements OnInit{
-
-  products = [Product];
-  product_id: number =0
-  quantity = new FormControl('');
-  productname: string =''
-  productdescription: string =''
-  productprice: number =0
-  availablequantity: number =0
-
-  @Input() category: string ="meals"
-
-  @Input() username!: string
-  @Input() password!: string
-  @Input() productquantity: number =0
-  @Output()productquantityChange: number =0
-
-  @Input() producttotal: number =0
-  @Output()producttotalChange: number =0
-
-  constructor(
-    public foodmenucomponent: FoodMenuComponent,
-    public logincomponent: LoginComponent,
-    public productdataservice: ProductDataService,
-    private activatedRoute!: ActivatedRoute,
-
-  ){}
-
-
   populateData(product_id: any, productprice: number, productname:any, productquantity: number){
 
 
@@ -136,19 +101,12 @@ export class ListProductComponent implements OnInit{
     console.log(productname);
     console.log(productquantity);
     this.producttotal = productquantity * productprice;
-
-
-
     console.log(this.producttotal)
 
-
   }
 
-  ngOnInit(): void {
 
-
-
-
-  }
-
+}
+function getData() {
+  throw new Error('Function not implemented.');
 }

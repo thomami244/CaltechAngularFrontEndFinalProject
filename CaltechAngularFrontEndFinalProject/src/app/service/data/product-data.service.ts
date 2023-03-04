@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IUser } from 'src/app/interfaces/user';
-import { Product } from 'src/app/list-product/list-product.component';
+import { IProduct } from 'src/app/interfaces/product';
+import { ListProductComponent } from 'src/app/list-product/list-product.component';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,6 @@ export class ProductDataService {
   //   return this.httpClient.get<IUser[]>(`http://localhost:8080/users/all`)
   // }
   retrieveAllProducts(){
-    return this.httpClient.get<Product[]>(`http://localhost:8080/products/all`)
+    return this.httpClient.get<IProduct[]>(`http://localhost:8080/products/all`)
   }
 }

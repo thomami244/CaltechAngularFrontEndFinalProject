@@ -23,11 +23,11 @@ export class CartDataService {
     return this.http.get<ICart>(`${this._rootUrl}/${username}/cart/${cart_id}`);
   }
 
-  getCartByUsernameViaREST(username: string): Observable<ICart> {
+  getCartsByUsernameViaREST(username: string): Observable<ICart> {
     return this.http.get<ICart>(`${this._rootUrl}/${username}/cart`);
   }
 
-  getCartsViaREST(): Observable<ICart[]> {
+  getAllCartsViaREST(): Observable<ICart[]> {
     return this.http.get<ICart[]>(`${this._rootUrl}/carts/all`);
   }
 

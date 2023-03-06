@@ -17,36 +17,30 @@ export class CartDataService {
 
   constructor(private http: HttpClient) { }
 
-  getCarts(): ICart[] {
-    return this._carts;
+
+
+  getCartByIdViaREST(username: string, cart_id: number): Observable<ICart> {
+    return this.http.get<ICart>(`${this._rootUrl}/${username}/cart/${cart_id}`);
   }
 
-  addCart(cart: ICart) {
-    this._cart.push(cart);
-  }
-
-  getCartById(id: number): ICart {
-    return this._cart.filter(cart => cart.id === id)[0];
-  }
-
-  getCartByIdViaREST(id: number): Observable<ICart> {
-    return this.http.get<ICart>(`${this._rootUrl}/${id}`);
+  getCartByUsernameViaREST(username: string): Observable<ICart> {
+    return this.http.get<ICart>(`${this._rootUrl}/${username}/cart`);
   }
 
   getCartsViaREST(): Observable<ICart[]> {
     return this.http.get<ICart[]>(`${this._rootUrl}/carts/all`);
   }
 
-  createCart(cart: ICart): Observable<ICart> {
-    return this.http.post<ICart>(this._rootUrl, cart);
+  createCart(username: string, cart: ICart): Observable<ICart> {
+    return this.http.post<ICart>(`${this._rootUrl}/${username}/cart`, cart);
   }
 
-  updateCart(user: ICart): Observable<ICart> {
-    return this.http.put<ICart>(`${this._rootUrl}/${cart.id}`, cart);
+  updateCartViaREST(username: string, cart_id: number, cart: ICart): Observable<ICart> {
+    return this.http.put<ICart>(`${this._rootUrl}/${username}/cart/${cart_id}`, cart);
   }
 
-  deleteCart(id: number): Observable<ICart> {
-    return this.http.delete<ICart>(`${this._rootUrl}/${id}`);
+  deleteCart(username: string, cart_id: number): Observable<ICart> {
+    return this.http.delete<ICart>(`${this._rootUrl}/${username}/cart/${cart_id}`);
   }
 
 }

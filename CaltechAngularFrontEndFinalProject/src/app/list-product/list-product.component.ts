@@ -1,13 +1,19 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input, Output, NgModule, Injectable, Inject,  } from '@angular/core';
 import { ProductDataService } from '../service/data/product-data.service';
+import { CartDataService } from '../service/cart/cart-data.service';
+import { CartSessionDataService } from '../service/cartSession/cart-session-data.service';
 import { FoodMenuComponent } from '../food-menu/food-menu.component';
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { IProduct } from './../interfaces/product';
+import { IUser } from './../interfaces/user';
+
 import { Subscription } from 'rxjs';
 import { Observable } from 'rxjs';
 import { LoginComponent } from '../login/login.component';
+import { ICartSession } from '../interfaces/cart-session';
+import { ICart } from '../interfaces/cart';
 
 // @NgModule({
 //   imports: [
@@ -35,10 +41,12 @@ export class ListProductComponent implements OnInit {
   productdescription: string =''
   productprice: number =0
   availablequantity: number =0
+  dummyUser!: IUser
   @Input() category: string ="meals"
   @Input() username!: string
   @Input() password!: string
   @Input() productquantity: number =0
+  @Input() cartsession!: ICartSession
   @Output()productquantityChange: number =0
   @Input() producttotal: number =0
   @Output()producttotalChange: number =0
@@ -50,9 +58,25 @@ export class ListProductComponent implements OnInit {
     public foodmenucomponent: FoodMenuComponent,
     private activatedRoute: ActivatedRoute,
     private productdataservice: ProductDataService,
+    private cartsessiondataservice: CartSessionDataService,
+    private cartdataservice: CartDataService,
     public logincomponent: LoginComponent,
   ) { }
   ngOnInit() {
+    // at the beginning of a cart session - the user id will not be known as the user has not yet logged in
+    // consequently a -1 userid will be used and updated with the real userid when the user logs in
+    // consequently the cart session will not be saved in the database until both the products have been added to the cart and the user logs in
+
+    // this.cartsession = new ICartSession((this.dummyUser, ), '', false, new Date());
+    // user: IUser,
+    // cartSessionId: number
+
+
+
+    // this.subscription = this.cartsessiondataservice.createCartSession(this.username).subscribe((cartSession: ICartSession) => {
+    //   this.user = user;}
+
+
     this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
       this.products = products;
       console.log(products);

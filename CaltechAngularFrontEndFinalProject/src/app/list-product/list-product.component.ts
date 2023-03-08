@@ -40,6 +40,7 @@ export class ListProductComponent implements OnInit {
   productname: string =''
   productdescription: string =''
   productprice: number =0
+  product!: IProduct
   availablequantity: number =0
   dummyUser!: IUser
   @Input() category: string ="meals"
@@ -47,6 +48,16 @@ export class ListProductComponent implements OnInit {
   @Input() password!: string
   @Input() productorderquantity: number =0
   @Input() cartsession!: ICartSession
+  // @Input() cart: ICart = {
+  //   productorderquantity: 0,
+  //   productordertotalamount: 0,
+  //   product!= 0,
+  //   cartSession: cartsession
+  // }
+
+  // cart.productorderquantity: 0,
+  //   productordertotalamount: 0
+
   @Output()productorderquantityChange: number =0
   @Input() productordertotalamount: number =0
   @Output()productordertotalamountChange: number =0

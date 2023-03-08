@@ -1,55 +1,72 @@
-<h3>Cart</h3>
+
 
 <!-- <p>
   <a routerLink="/shipping">Shipping Prices</a>
 </p> -->
+<div class="h-100 d-flex align-items-center justify-content-center">
+
+<ng-template *ngIf="items.length else elseBlock">
 
 
-<table class = "table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <!-- <th>Description</th> -->
-      <th>Price</th>
-      <th>Quantity</th>
-      <!-- <th>Order Quantity</th>
-      <th>Total</th> -->
-      <th>Total price</th>
-    </tr>
-  </thead>
-  <tbody>
+  <h3>Cart</h3>
+    <table class = "table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <!-- <th>Description</th> -->
+          <th>Price</th>
+          <th>Quantity</th>
+          <!-- <th>Order Quantity</th>
+          <th>Total</th> -->
+          <th>Total price</th>
+        </tr>
+      </thead>
+      <tbody>
 
-    <tr class="cart-item" *ngFor="let item of items">
-      <td> <span>{{ item.productname }} </span></td>
-      <td><span>{{ item.productprice | currency }}</span></td>
-      <td><span>{{ item.productquantity }}</span></td>
-      <td><span>{{ item.producttotal | currency }}</span></td>
-    </tr>
-    <tr>
-      <td> <span> </span></td>
-      <td><span>Grand Total</span></td>
-      <td><span></span></td>
-      <td><span>{{ grandtotal | currency}}</span></td>
-  </tbody>
-</table>
+        <tr class="cart-item" *ngFor="let item of items">
+          <td> <span>{{ item.productname }} </span></td>
+          <td><span>{{ item.productprice | currency }}</span></td>
+          <td><span>{{ item.productquantity }}</span></td>
+          <td><span>{{ item.producttotal | currency }}</span></td>
+        </tr>
+        <tr>
+          <td> <span> </span></td>
+          <td><span>Grand Total</span></td>
+          <td><span></span></td>
+          <td><span>{{ grandtotal | currency}}</span></td>
+      </tbody>
+    </table>
 
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
 
-  <div>
-    <label for="name">
-      Name
-    </label>
-    <input id="name" type="text" formControlName="name">
-  </div>
+      <div>
+        <label for="name">
+          Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+      </div>
 
-  <div>
-    <label for="address">
-      Address
-    </label>
-    <input id="address" type="text" formControlName="address">
-  </div>
+      <div>
+        <label for="address">
+          Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
 
-  <button class="button" type="submit" routerLink="/confirmation" class="button fancy-button">Purchase</button>
+      <button class="button" type="submit" routerLink="/confirmation" class="button fancy-button">Purchase</button>
 
-</form>
+    </form>
+  </ng-template>
+
+  <ng-template #elseBlock>
+    <div>
+      <h6> No items added to your cart yet </h6>
+
+      <a routerLink="" class="button fancy-button">
+        <i class="material-icons">Return to product order page</i>
+      </a>
+
+    </div>
+  </ng-template>
+</div>

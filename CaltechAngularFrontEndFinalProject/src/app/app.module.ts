@@ -21,6 +21,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { IUser } from './interfaces/user';
 import { IProduct } from './interfaces/product';
 import { ShoppingcartService } from './service/shoppingcart.service';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -41,6 +42,7 @@ import { ShoppingcartService } from './service/shoppingcart.service';
     UserDetailsComponent,
     AdminPanelComponent,
     ListProductComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

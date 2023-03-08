@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserService } from './service/user/user.service';
 // import { PlaceholderComponent } from './../components/placeholder/placeholder.component';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
+import { CartComponent } from './cart/cart.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ShoppingcartService } from './service/shoppingcart.service';
@@ -11,6 +12,7 @@ import { ShoppingcartService } from './service/shoppingcart.service';
 const routes: Routes = [
   // {path: '', component:LoginComponent},
   { path: '', component: FoodMenuComponent },
+  { path: 'cart', component: CartComponent },
   {path: 'login', component:LoginComponent},
   // {path: 'welcome/:name', component:WelcomeComponent, canActivate:[RouteGuardService]},
   // {path: 'todos', component:ListTodosComponent, canActivate:[RouteGuardService]},

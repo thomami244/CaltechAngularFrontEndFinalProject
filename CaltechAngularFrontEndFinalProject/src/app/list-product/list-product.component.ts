@@ -112,6 +112,7 @@ export class ListProductComponent implements OnInit {
   }
 
   addToCart(product: IProduct) {
+    product.producttotal = product.productprice*product.productquantity
     this.shoppingcartService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }

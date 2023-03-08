@@ -7,7 +7,6 @@
         <th>Price</th>
         <th>Available</th>
         <th>Order Quantity</th>
-        <!-- <th>Total</th>  -->
         <th>Add to cart</th>
       </tr>
     </thead>
@@ -20,25 +19,11 @@
           <td> <input type="text" class="form-control" [(ngModel)]="product.productquantity" [ngModel]="0"></td>
           <td>
             <button type="button" (click)="addToCart(product)">Buy</button>
-            <!-- <input type="text" class="form-control" [(ngModel)]="product.cart"> -->
+
           </td>
-
-          <!-- <td>
-            <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, {{productorderquantity}}> Add to cart </button>
-          </td> -->
-
-          <!-- <td >{{cart.productordertotalamount}} </td> -->
         </tr>
       </tbody>
      </table>
-{{foodmenucomponent.category}}
-{{username}}
-<!-- {{users.username}} -->
-{{logincomponent.username}}
-{{password}}
-{{logincomponent.password}}
-<!-- {{logincomponent.getUsername}} -->
-{{logincomponent.password}}
-<!-- {{adminLoggedIn}}
-{{logincomponent.adminLoggedIn}} -->
+
+
 </div>

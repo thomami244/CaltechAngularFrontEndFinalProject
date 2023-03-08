@@ -6,7 +6,7 @@ export interface ICart {
 
 
     productorderquantity: number,
-    productordertotalamount: 300,
+    productordertotalamount: number,
     product: IProduct,
     cartSession: ICartSession
 }

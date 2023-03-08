@@ -7,8 +7,8 @@
         <th>Price</th>
         <th>Available</th>
         <th>Order Quantity</th>
-        <th>Add to cart</th>
         <th>Total</th>
+        <th>Add to cart</th>
       </tr>
     </thead>
       <tbody>
@@ -18,12 +18,14 @@
           <td> {{product.productprice}}</td>
           <td> {{product.availablequantity}}</td>
           <td>
-            <input type="text" class="form-control" [(ngModel)]="cart.productorderquantity">
+            <input type="text" class="form-control" [(ngModel)]="productorderquantity">
           </td>
-          <td>
-          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, cart.productorderquantity)"> Add to cart</button>
-            </td>
-          <td >{{cart.productordertotalamount}} </td>
+
+          <!-- <td>
+            <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, {{productorderquantity}}> Add to cart </button>
+          </td> -->
+
+          <!-- <td >{{cart.productordertotalamount}} </td> -->
         </tr>
       </tbody>
      </table>

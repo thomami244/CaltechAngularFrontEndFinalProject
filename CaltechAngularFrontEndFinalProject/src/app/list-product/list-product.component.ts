@@ -47,7 +47,6 @@ export class ListProductComponent implements OnInit {
   @Input() password!: string
   @Input() productorderquantity: number =0
   @Input() cartsession!: ICartSession
-  @Input() cart!: ICart
   @Output()productorderquantityChange: number =0
   @Input() productordertotalamount: number =0
   @Output()productordertotalamountChange: number =0
@@ -65,11 +64,10 @@ export class ListProductComponent implements OnInit {
   ) { }
   ngOnInit() {
     // at the beginning of a cart session - the user id will not be known as the user has not yet logged in
-    // consequently a -1 userid will not be required
-    // be used and updated with the real userid when the user logs in
+    // consequently a -1 userid will be used and updated with the real userid when the user logs in
     // consequently the cart session will not be saved in the database until both the products have been added to the cart and the user logs in
 
-    // this.cartsession = new ICartSession((this.dummyUser, ), '', false, new Date());
+    // this.cartsession = new ICartSession((this.dummyUser), '', false, new Date());
     // user: IUser,
     // cartSessionId: number
 
@@ -89,8 +87,6 @@ export class ListProductComponent implements OnInit {
       console.log(products[0].productcategory);
       console.log(products[0].productprice);
       console.log(products[0].availablequantity);
-      // console.log(products[0].productquantity);
-      // console.log(products[0].producttotal);
       console.log(products[0].isActivated);
       console.log(products[1].product_id);
       console.log(products[1].productname);

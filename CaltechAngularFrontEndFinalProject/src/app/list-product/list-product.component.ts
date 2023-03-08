@@ -71,6 +71,7 @@ export class ListProductComponent implements OnInit {
     private cartsessiondataservice: CartSessionDataService,
     private cartdataservice: CartDataService,
     public logincomponent: LoginComponent,
+    private shoppingcartService: ShoppingcartService
   ) { }
   ngOnInit() {
     // at the beginning of a cart session - the user id will not be known as the user has not yet logged in
@@ -106,6 +107,12 @@ export class ListProductComponent implements OnInit {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  addToCart(product: IProduct) {
+    this.shoppingcartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
+
   populateData(product_id: any, productprice: number, productname:any, productquantity: number){
     console.log(product_id);
     console.log(productname);

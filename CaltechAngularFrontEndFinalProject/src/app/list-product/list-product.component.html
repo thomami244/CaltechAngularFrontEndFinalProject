@@ -6,8 +6,8 @@
         <th>Description</th>
         <th>Price</th>
         <th>Available</th>
-        <th>Order Quantity</th>
-        <th>Total</th>
+        <!-- <th>Order Quantity</th>
+        <th>Total</th> -->
         <th>Add to cart</th>
       </tr>
     </thead>
@@ -18,7 +18,8 @@
           <td> {{product.productprice}}</td>
           <td> {{product.availablequantity}}</td>
           <td>
-            <input type="text" class="form-control" [(ngModel)]="product.cart">
+            <button type="button" (click)="addToCart(product)">Buy</button>
+            <!-- <input type="text" class="form-control" [(ngModel)]="product.cart"> -->
           </td>
 
           <!-- <td>

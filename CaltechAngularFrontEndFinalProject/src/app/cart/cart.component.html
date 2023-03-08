@@ -4,10 +4,43 @@
   <a routerLink="/shipping">Shipping Prices</a>
 </p> -->
 
-<div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.productname }} </span>
-  <span>{{ item.productprice | currency }}</span>
-</div>
+
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <!-- <th>Description</th> -->
+      <th>Price</th>
+      <th>Quantity</th>
+      <!-- <th>Order Quantity</th>
+      <th>Total</th> -->
+      <th>Total price</th>
+    </tr>
+  </thead>
+    <tbody>
+
+      <tr class="cart-item" *ngFor="let item of items">
+        <td> <span>{{ item.productname }} </span></td>
+        <td><span>{{ item.productprice | currency }}</span></td>
+        <td><span>{{ item.productquantity | currency }}</span></td>
+        <td><span>{{ item.productprice | currency }}</span></td>
+
+
+
+
+        <!-- <td>
+          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, {{productorderquantity}}> Add to cart </button>
+        </td> -->
+
+        <!-- <td >{{cart.productordertotalamount}} </td> -->
+      </tr>
+    </tbody>
+   </table>
+
+
+
+
+
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
 

@@ -4,6 +4,7 @@ export interface IProduct {
   productdescription : string,
   productURL : string,
   productcategory : string,
+  productquantity : number,
   productprice : number,
   availablequantity : number,
   isActivated: boolean

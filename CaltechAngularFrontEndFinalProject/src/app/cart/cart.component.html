@@ -5,7 +5,7 @@
 </p> -->
 <div class="h-100 d-flex align-items-center justify-content-center">
 
-<ng-template *ngIf="items.length else elseBlock">
+<div *ngIf="items.length else elseBlock">
 
 
   <h3>Cart</h3>
@@ -57,7 +57,7 @@
       <button class="button" type="submit" routerLink="/confirmation" class="button fancy-button">Purchase</button>
 
     </form>
-  </ng-template>
+  </div>
 
   <ng-template #elseBlock>
     <div>

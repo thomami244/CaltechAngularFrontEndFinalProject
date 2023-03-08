@@ -56,6 +56,7 @@ export class ListProductComponent implements OnInit {
     productordertotalamount: 0,
   }
 
+
   // cart.productorderquantity: 0,
   //   productordertotalamount: 0
 

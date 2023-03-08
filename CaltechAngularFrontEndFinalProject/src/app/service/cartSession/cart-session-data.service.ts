@@ -10,7 +10,10 @@ import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class CartSessionDataService {
   private _rootUrl: string = 'http://localhost:8080/users';
 

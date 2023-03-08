@@ -13,7 +13,9 @@ import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/catch';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
 
   private _rootUrl: string = 'http://localhost:8080/users';

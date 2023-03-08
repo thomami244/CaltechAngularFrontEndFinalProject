@@ -48,12 +48,10 @@ export class ListProductComponent implements OnInit {
   @Input() password!: string
   @Input() productorderquantity: number =0
   @Input() cartsession!: ICartSession
-  // @Input() cart: ICart = {
-  //   productorderquantity: 0,
-  //   productordertotalamount: 0,
-  //   product!= 0,
-  //   cartSession: cartsession
-  // }
+  @Input() cart: ICart = {
+    productorderquantity: 0,
+    productordertotalamount: 0,
+  }
 
   // cart.productorderquantity: 0,
   //   productordertotalamount: 0

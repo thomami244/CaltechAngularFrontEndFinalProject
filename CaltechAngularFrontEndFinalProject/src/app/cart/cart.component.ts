@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoppingcartService } from '../service/shoppingcart.service';
 import { FormBuilder } from '@angular/forms';
+import { IProduct } from '../interfaces/product';
 
 // obtained form builder from angular docs
 // https://angular.io/start/start-forms
@@ -10,9 +11,20 @@ import { FormBuilder } from '@angular/forms';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent {
+export class CartComponent implements OnInit {
+  grandtotal: number = 0
 
   items = this.shoppingcartService.getItems();
+
+
+  ngOnInit() {
+
+    this.items.forEach((item: IProduct) => {
+      (this.grandtotal += item.producttotal);
+    });
+
+
+  }
 
   checkoutForm = this.formBuilder.group({
     name: '',

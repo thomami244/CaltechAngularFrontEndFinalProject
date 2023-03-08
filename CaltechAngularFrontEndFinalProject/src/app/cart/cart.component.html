@@ -24,16 +24,12 @@
         <td><span>{{ item.productprice | currency }}</span></td>
         <td><span>{{ item.productquantity }}</span></td>
         <td><span>{{ item.producttotal | currency }}</span></td>
-
-
-
-
-        <!-- <td>
-          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, {{productorderquantity}}> Add to cart </button>
-        </td> -->
-
-        <!-- <td >{{cart.productordertotalamount}} </td> -->
       </tr>
+      <tr>
+        <td> <span> </span></td>
+        <td><span>Grand Total</span></td>
+        <td><span></span></td>
+        <td><span>{{ grandtotal | currency}}</span></td>
     </tbody>
    </table>
 

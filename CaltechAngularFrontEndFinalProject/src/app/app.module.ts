@@ -23,6 +23,7 @@ import { IProduct } from './interfaces/product';
 import { ShoppingcartService } from './service/shoppingcart.service';
 import { CartComponent } from './cart/cart.component';
 import { AdminProductDashboardComponent } from './admin-product-dashboard/admin-product-dashboard.component';
+import { PaymentconfirmationComponent } from './paymentconfirmation/paymentconfirmation.component';
 
 
 
@@ -45,6 +46,7 @@ import { AdminProductDashboardComponent } from './admin-product-dashboard/admin-
     ListProductComponent,
     CartComponent,
     AdminProductDashboardComponent,
+    PaymentconfirmationComponent,
   ],
   imports: [
     BrowserModule,

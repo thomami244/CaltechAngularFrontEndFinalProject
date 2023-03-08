@@ -17,25 +17,21 @@
       <th>Total price</th>
     </tr>
   </thead>
-    <tbody>
+  <tbody>
 
-      <tr class="cart-item" *ngFor="let item of items">
-        <td> <span>{{ item.productname }} </span></td>
-        <td><span>{{ item.productprice | currency }}</span></td>
-        <td><span>{{ item.productquantity }}</span></td>
-        <td><span>{{ item.producttotal | currency }}</span></td>
-      </tr>
-      <tr>
-        <td> <span> </span></td>
-        <td><span>Grand Total</span></td>
-        <td><span></span></td>
-        <td><span>{{ grandtotal | currency}}</span></td>
-    </tbody>
-   </table>
-
-
-
-
+    <tr class="cart-item" *ngFor="let item of items">
+      <td> <span>{{ item.productname }} </span></td>
+      <td><span>{{ item.productprice | currency }}</span></td>
+      <td><span>{{ item.productquantity }}</span></td>
+      <td><span>{{ item.producttotal | currency }}</span></td>
+    </tr>
+    <tr>
+      <td> <span> </span></td>
+      <td><span>Grand Total</span></td>
+      <td><span></span></td>
+      <td><span>{{ grandtotal | currency}}</span></td>
+  </tbody>
+</table>
 
 
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
@@ -54,6 +50,6 @@
     <input id="address" type="text" formControlName="address">
   </div>
 
-  <button class="button" type="submit">Purchase</button>
+  <button class="button" type="submit" routerLink="/confirmation" class="button fancy-button">Purchase</button>
 
 </form>

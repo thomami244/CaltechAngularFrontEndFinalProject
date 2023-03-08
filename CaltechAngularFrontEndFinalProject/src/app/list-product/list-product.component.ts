@@ -39,6 +39,8 @@ export class ListProductComponent implements OnInit {
   product_id: number =0
   quantity = new FormControl('');
   productname: string =''
+  @Input() productquantity: number = 1
+  @Output() productquantityChange!: number
   productdescription: string =''
   productprice: number =0
   product!: IProduct

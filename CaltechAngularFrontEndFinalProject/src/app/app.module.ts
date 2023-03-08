@@ -20,6 +20,7 @@ import { AppendorPipe } from './pipes/appendor/appendor.pipe';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { IUser } from './interfaces/user';
 import { IProduct } from './interfaces/product';
+import { ShoppingcartService } from './service/shoppingcart.service';
 
 
 
@@ -49,7 +50,7 @@ import { IProduct } from './interfaces/product';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [FoodMenuComponent, UserService, LoginComponent, ProductDataService],
+  providers: [FoodMenuComponent, UserService, LoginComponent, ProductDataService, ShoppingcartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

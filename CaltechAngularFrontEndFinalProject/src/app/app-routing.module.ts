@@ -6,6 +6,8 @@ import { UserService } from './service/user/user.service';
 import { FoodMenuComponent } from './food-menu/food-menu.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { ShoppingcartService } from './service/shoppingcart.service';
+
 const routes: Routes = [
   // {path: '', component:LoginComponent},
   { path: '', component: FoodMenuComponent },

@@ -3,6 +3,7 @@ import { Component, OnInit, Input, Output, NgModule, Injectable, Inject,  } from
 import { ProductDataService } from '../service/data/product-data.service';
 import { CartDataService } from '../service/cart/cart-data.service';
 import { CartSessionDataService } from '../service/cartSession/cart-session-data.service';
+import { ShoppingcartService } from '../service/shoppingcart.service';
 import { FoodMenuComponent } from '../food-menu/food-menu.component';
 import { FormControl,  FormsModule,  ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

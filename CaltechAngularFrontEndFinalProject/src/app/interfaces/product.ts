@@ -6,7 +6,5 @@ export interface IProduct {
   productcategory : string,
   productprice : number,
   availablequantity : number,
-  productquantity : number,
-  producttotal : number,
   isActivated: boolean
 }

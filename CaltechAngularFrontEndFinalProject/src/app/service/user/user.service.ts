@@ -23,27 +23,27 @@ export class UserService {
   // private prop: string = 'foo';
   // public propChanged: BehaviorSubject<string> = new BehaviorSubject<string>(this.prop);
 
-  private _users: IUser[] = [
-    { id: 1, username: 'JohnDoe', email: 'john.doe@example.com' },
-    { id: 2, username: 'JaneDoe', email: 'jane.doe@example.com' },
-    { id: 3, username: 'JacobRiglin', email: 'jacob.riglin@example.com' },
-    { id: 4, username: 'SamKolder', email: 'sam.kolder@example.com' },
-    { id: 5, username: 'JeremyJauncey', email: 'jeremy.jauncey@example.com' },
-  ];
+  // private _users: IUser[] = [
+  //   { id: 1, username: 'JohnDoe', email: 'john.doe@example.com' },
+  //   { id: 2, username: 'JaneDoe', email: 'jane.doe@example.com' },
+  //   { id: 3, username: 'JacobRiglin', email: 'jacob.riglin@example.com' },
+  //   { id: 4, username: 'SamKolder', email: 'sam.kolder@example.com' },
+  //   { id: 5, username: 'JeremyJauncey', email: 'jeremy.jauncey@example.com' },
+  // ];
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): IUser[] {
-    return this._users;
-  }
+  // getUsers(): IUser[] {
+  //   return this._users;
+  // }
 
-  addUser(user: IUser) {
-    this._users.push(user);
-  }
+  // addUser(user: IUser) {
+  //   this._users.push(user);
+  // }
 
-  getUserById(id: number): IUser {
-    return this._users.filter(user => user.id === id)[0];
-  }
+  // getUserById(id: number): IUser {
+  //   return this._users.filter(user => user.id === id)[0];
+  // }
 
   getUserByIdViaREST(id: number): Observable<IUser> {
     return this.http.get<IUser>(`${this._rootUrl}/${id}`);

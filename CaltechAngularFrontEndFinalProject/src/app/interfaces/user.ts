@@ -25,11 +25,11 @@ export interface IUser {
   // name: string;
   username?: string;
   password?: string;
-  email?: string;
-  address?: IAddress;
-  phone?: string;
-  website?: string;
-  company?: ICompany;
+  // email?: string;
+  // address?: IAddress;
+  // phone?: string;
+  // website?: string;
+  // company?: ICompany;
 }
 
 

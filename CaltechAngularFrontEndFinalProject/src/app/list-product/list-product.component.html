@@ -18,12 +18,12 @@
           <td> {{product.productprice}}</td>
           <td> {{product.availablequantity}}</td>
           <td>
-            <input type="text" class="form-control" [(ngModel)]="product.productquantity">
+            <input type="text" class="form-control" [(ngModel)]="cart.productorderquantity">
           </td>
           <td>
-          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, product.productquantity)"> Add to cart</button>
+          <button  class="btn btn-success" (click) = "populateData(product.product_id, product.productprice, product.productname, cart.productorderquantity)"> Add to cart</button>
             </td>
-          <td >{{product.producttotal}} </td>
+          <td >{{cart.productordertotalamount}} </td>
         </tr>
       </tbody>
      </table>

@@ -17,7 +17,7 @@
           <td>{{product.productdescription}}</td>
           <td> {{product.productprice}}</td>
           <td> {{product.availablequantity}}</td>
-          <td> <input type="text" class="form-control" [(ngModel)]="product.productquantity" [value]="1"></td>
+          <td> <input type="text" class="form-control" [(ngModel)]="product.productquantity" [ngModel]="0"></td>
           <td>
             <button type="button" (click)="addToCart(product)">Buy</button>
             <!-- <input type="text" class="form-control" [(ngModel)]="product.cart"> -->

@@ -83,6 +83,7 @@ export class ListProductComponent implements OnInit {
     // this.cartsession = new ICartSession((this.dummyUser), '', false, new Date());
     // user: IUser,
     // cartSessionId: number
+    this.productquantity = 1
 
 
 

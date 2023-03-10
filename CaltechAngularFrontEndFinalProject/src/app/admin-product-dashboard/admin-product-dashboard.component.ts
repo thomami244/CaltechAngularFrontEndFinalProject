@@ -101,15 +101,22 @@ export class AdminProductDashboardComponent implements OnInit {
 
     updateActivated(product: IProduct) { {
       console.log("button clicked")
+      console.log(product)
       console.log(product.isActivated)
-      product.isActivated = false
+      if (product.isActivated = false) {
+        product.isActivated = true
+      }
+      else {
+        product.isActivated = false
+      }
 
-      this.productdataservice.updateProduct(this.product)
+      this.productdataservice.updateProduct(product)
       .subscribe(product => {
         console.log('Got the Create Response as : ', product);
         alert(`Product activation got updated`);
       });
     }
+
   }
 
   }

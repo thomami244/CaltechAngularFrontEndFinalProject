@@ -37,14 +37,14 @@ export class UserDetailsComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(qs => console.log('Got the Query Params as: ', qs));
   }
 
-  createUser() {
-    this.user.id = null as any;;
-    this.userService.createUser(this.user)
-      .subscribe(user => {
-        console.log('Got the Create Response as : ', user);
-        alert(`User got created with id: , ${user.id}`);
-      });
-  }
+  // createUser() {
+  //   this.user.id = null as any;;
+  //   this.userService.createUser(this.user)
+  //     .subscribe(user => {
+  //       console.log('Got the Create Response as : ', user);
+  //       alert(`User got created with id: , ${user.id}`);
+  //     });
+  // }
 
   updateUser() {
     this.userService.updateUser(this.user)
@@ -54,13 +54,13 @@ export class UserDetailsComponent implements OnInit {
     });
   }
 
-  deleteUser() {
-    this.userService.deleteUser(this.user.id)
-    .subscribe(user => {
-      console.log('Got the Create Response as : ', user);
-      alert(`User got deleted`);
-    });
-  }
+  // deleteUser() {
+  //   this.userService.deleteUser(this.user.id)
+  //   .subscribe(user => {
+  //     console.log('Got the Create Response as : ', user);
+  //     alert(`User got deleted`);
+  //   });
+  // }
 
   // getUserPosts() {
   //   this.posts = this.userService.getPostsByUser(this.user.id);

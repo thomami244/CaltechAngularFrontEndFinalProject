@@ -66,19 +66,6 @@ export class AdminProductDashboardComponent implements OnInit {
       private shoppingcartService: ShoppingcartService
     ) { }
     ngOnInit() {
-      // at the beginning of a cart session - the user id will not be known as the user has not yet logged in
-      // consequently a -1 userid will be used and updated with the real userid when the user logs in
-      // consequently the cart session will not be saved in the database until both the products have been added to the cart and the user logs in
-
-      // this.cartsession = new ICartSession((this.dummyUser), '', false, new Date());
-      // user: IUser,
-      // cartSessionId: number
-      this.productquantity = 1
-
-
-
-      // this.subscription = this.cartsessiondataservice.createCartSession(this.username).subscribe((cartSession: ICartSession) => {
-      //   this.user = user;}
 
 
       this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
@@ -86,15 +73,11 @@ export class AdminProductDashboardComponent implements OnInit {
         console.log(products);
         console.log(products[0].product_id);
         console.log(products[0].productname);
-        console.log(products[0].productdescription);
-        console.log(products[0].productURL);
-        console.log(products[0].productcategory);
-        console.log(products[0].productprice);
-        console.log(products[0].availablequantity);
         console.log(products[0].isActivated);
         console.log(products[1].product_id);
         console.log(products[1].productname);
         console.log(products[1].productdescription);
+        console.log(products[0].isActivated);
       });
     }
     ngOnDestroy() {
@@ -114,6 +97,20 @@ export class AdminProductDashboardComponent implements OnInit {
       this.productordertotalamount = this.productorderquantity * productprice;
       console.log(this.productordertotalamount)
     }
+
+    updateActivated() { {
+      console.log("button clicked")
+      // this.productService.updateUser(this.user)
+      // .subscribe(user => {
+      //   console.log('Got the Create Response as : ', user);
+      //   alert(`User got updated`);
+      // });
+    }
+  }
+
+
+
+
   }
   function getData() {
     throw new Error('Function not implemented.');

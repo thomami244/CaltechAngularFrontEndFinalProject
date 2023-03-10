@@ -15,7 +15,8 @@
           <td>{{product.productdescription}}</td>
           <td> {{product.productprice}}</td>
           <td> {{product.availablequantity}}</td>
-          <td> {{product.isActivated}}</td>
+          <td> </td>
+          <button class="btn btn-primary" (click)="updateActivated()">{{product.isActivated}}</button>
           <!-- <td> <input type="text" class="form-control" [(ngModel)]="product.productquantity" [ngModel]="0"></td> -->
           <td>
             <!-- <button type="button" (click)="addToCart(product)">Buy</button> -->

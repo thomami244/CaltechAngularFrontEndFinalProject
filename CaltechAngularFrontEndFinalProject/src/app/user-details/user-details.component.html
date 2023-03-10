@@ -1,46 +1,12 @@
-<!-- <div class="col-md-6"> -->
+<!-- allows password to be updated for each user -->
 
-  <div class="user-details-box" *ngIf="user">
-    <!-- <h3>
-      Update Individual User Details
-    </h3> -->
-    <div>
-      <!-- <li> -->
-        <span>UserId: {{ user.id }}</span><br>
-        <span>User Name: {{ user.username }}</span><br>
-        <!-- <span>Current Password: {{ user.password }}</span><br><br><br> -->
-        <span>Update Current Password:
-
-          <!-- <label for="quantity"></label>
-          <input id="quantity" type="text" [formControl]="quantity"> -->
-
-
-          <!-- <label>0</label> -->
-
-          <!-- <button (click)="updateItem(product.productname)" class="btn btn-info">Update</button> -->
-
-
-          <input type="text" class="form-control" [(ngModel)]="user.password">
-          <!-- {{product.productquantity}} -->
-        </span><br>
-      <!-- </li> -->
-
-
-  <!-- <button class="btn btn-success" (click)="createUser()">Create User</button> -->
-  <button class="btn btn-primary" (click)="updateUser()">Update User</button>
-  <!-- <button class="btn btn-danger" (click)="deleteUser()">Delete User</button> -->
-  <!-- <button class="btn btn-warning" (click)="getUserPosts()">Get User Posts</button> -->
-
+<div class="user-details-box" *ngIf="user">
+  <div>
+    <span>UserId: {{ user.id }}</span><br>
+    <span>User Name: {{ user.username }}</span><br>
+    <span>Update Current Password:
+      <input type="text" class="form-control" [(ngModel)]="user.password">
+    </span><br>
+    <button class="btn btn-primary" (click)="updateUser()">Update User</button>
   </div>
-  <!-- <span>User Email: <a href="{{ user.email | appendor: 'pre': 'mailto://' }}">{{ user.email }}</a></span><br> -->
-  <!-- <span>User Phone: <a href="{{ user.phone | appendor: 'pre': 'tel://' }}">{{ user.phone }}</a></span><br> -->
-  </div>
-  <!-- <br><br>
-  <a  class="router-link" [routerLink]="['/users', {adminLoggedIn: true}]"> Return to Users List</a>
-  <hr> -->
-
-<!-- </div> -->
-
-<!-- <pre>
-  {{ posts | async | json | uppercase }}
-</pre> -->
+</div>

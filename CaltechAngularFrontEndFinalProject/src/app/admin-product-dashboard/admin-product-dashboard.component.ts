@@ -32,7 +32,8 @@ export class AdminProductDashboardComponent implements OnInit {
     @Output() productquantityChange!: number
     productdescription: string =''
     productprice: number =0
-    product!: IProduct
+    // @Input() user!: IUser;
+    @Input() product!: IProduct
     availablequantity: number =0
     dummyUser!: IUser
     @Input() category: string ="meals"
@@ -98,18 +99,18 @@ export class AdminProductDashboardComponent implements OnInit {
       console.log(this.productordertotalamount)
     }
 
-    updateActivated() { {
+    updateActivated(product: IProduct) { {
       console.log("button clicked")
-      // this.productService.updateUser(this.user)
-      // .subscribe(user => {
-      //   console.log('Got the Create Response as : ', user);
-      //   alert(`User got updated`);
-      // });
+      console.log(product.isActivated)
+      product.isActivated = false
+
+      this.productdataservice.updateProduct(this.product)
+      .subscribe(product => {
+        console.log('Got the Create Response as : ', product);
+        alert(`Product activation got updated`);
+      });
     }
   }
-
-
-
 
   }
   function getData() {

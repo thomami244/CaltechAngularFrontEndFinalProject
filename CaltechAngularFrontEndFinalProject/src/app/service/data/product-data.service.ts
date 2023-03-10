@@ -1,14 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IProduct } from 'src/app/interfaces/product';
+import { Observable } from 'rxjs';
 import { ListProductComponent } from 'src/app/list-product/list-product.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductDataService {
+  private _rootUrl: string = 'http://localhost:8080/products';
 
   constructor(private httpClient: HttpClient) { }
+
+  updateProduct(product: IProduct): Observable<IProduct> {
+    return this.httpClient.put<IProduct>(`${this._rootUrl}/${product.product_id}`, product);
+  }
 
 //   retrieveAllTodos(username :any){
 //     return this.httpClient.get<Product[]>(`http://localhost:8080/users/${username}/todos`)

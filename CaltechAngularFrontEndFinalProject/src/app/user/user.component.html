@@ -1,5 +1,10 @@
 <!-- <a [routerLink]="[user.id]"> {{ user.username }}</a> -->
 <!-- <app-user [user]="user"></app-user> -->
 <!-- <app-user [user]="user"></app-user> -->
-<a [routerLink]="['/users', user.id]"> {{ user.username }}</a>
+
+
+<app-user-details [adminLoggedIn]="adminLoggedIn" [user]="user"></app-user-details>
+
+<!-- <a [routerLink]="['/users', user.id, {adminLoggedIn: adminLoggedIn}]"> {{ user.username }} {{adminLoggedIn}}</a>
+User Component Admin is logged in {{adminLoggedIn}} -->
 <!-- <a> {{ user.id }} {{ user.username }}</a> -->

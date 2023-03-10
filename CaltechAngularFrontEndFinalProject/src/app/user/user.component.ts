@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output } from '@angular/core';
 import { IUser } from './../interfaces/user';
 import { HookLogger } from './../decorators/class.decorator';
 
@@ -16,6 +16,8 @@ import { HookLogger } from './../decorators/class.decorator';
 export class UserComponent implements OnInit {
 
   @Input() user!: IUser;
+  @Input() adminLoggedIn:Boolean = false;
+  @Output() adminLoggedInChange:Boolean = false;
 
   constructor() { }
 

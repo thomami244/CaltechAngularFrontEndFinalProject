@@ -24,6 +24,7 @@ import { ShoppingcartService } from './service/shoppingcart.service';
 import { CartComponent } from './cart/cart.component';
 import { AdminProductDashboardComponent } from './admin-product-dashboard/admin-product-dashboard.component';
 import { PaymentconfirmationComponent } from './paymentconfirmation/paymentconfirmation.component';
+import { ProductMasterListComponent } from './product-master-list/product-master-list.component';
 
 
 
@@ -47,6 +48,7 @@ import { PaymentconfirmationComponent } from './paymentconfirmation/paymentconfi
     CartComponent,
     AdminProductDashboardComponent,
     PaymentconfirmationComponent,
+    ProductMasterListComponent,
   ],
   imports: [
     BrowserModule,

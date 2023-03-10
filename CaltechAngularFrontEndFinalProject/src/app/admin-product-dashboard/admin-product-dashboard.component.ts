@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-product-dashboard',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-product-dashboard.component.css']
 })
 export class AdminProductDashboardComponent {
+  @Input() adminLoggedIn:Boolean = false;
 
 }

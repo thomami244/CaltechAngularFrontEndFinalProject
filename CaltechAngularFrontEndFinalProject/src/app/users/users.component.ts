@@ -20,6 +20,8 @@ export class UsersComponent implements OnInit {
   users: IUser[] | undefined;
   subscription!: Subscription;
   @Input() adminLoggedIn:Boolean = false;
+  @Output() adminLoggedInChange:Boolean = false;
+
   param!: any;
   message: any;
   newData: any;

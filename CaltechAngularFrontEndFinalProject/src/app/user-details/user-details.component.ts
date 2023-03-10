@@ -1,18 +1,22 @@
 import { UserService } from './../service/user/user.service';
 import { IUser } from './../interfaces/user';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppendorPipe } from '../pipes/appendor/appendor.pipe';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.css']
+  styleUrls: ['./user-details.component.css'],
+  providers: [LoginComponent]
 })
 export class UserDetailsComponent implements OnInit {
 
-  user!: IUser;
+  @Input() user!: IUser;
   posts: any;
+  @Input() adminLoggedIn:Boolean = false;
+  @Output() adminLoggedInChange:Boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,

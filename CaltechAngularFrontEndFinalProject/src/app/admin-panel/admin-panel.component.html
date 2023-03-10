@@ -1,4 +1,36 @@
-<p>admin-panel works!</p>
-{{adminLoggedIn}}
+<h3>Admin Panel </h3>
+<!-- {{adminLoggedIn}} -->
 
-<app-users [adminLoggedIn]="adminLoggedIn"></app-users>
+
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-12 col-lg-4">
+      <app-users [adminLoggedIn]="adminLoggedIn"></app-users>
+
+    </div>
+
+    <div class="col-12 col-lg-8">
+      <h6>
+        Update Products List
+      </h6>
+      <app-admin-product-dashboard  [adminLoggedIn]="adminLoggedIn"></app-admin-product-dashboard>
+      <br>
+    </div>
+
+  </div>
+  <a class="router-link" [routerLink]="['/']"> Return to products page</a>
+</div>
+
+  <ng-template #elseBlock>
+    <div>
+      <h6> Only an administrator can access this page. Please return to the main page. </h6>
+
+      <a routerLink="/login" class="button fancy-button">
+        <i class="material-icons">Return to login page</i>
+      </a>
+
+    </div>
+  </ng-template>

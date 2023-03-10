@@ -1,1 +1,28 @@
-<p>admin-product-dashboard works!</p>
+<div class="container">
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Available</th>
+        <th>Activated</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr *ngFor = "let product of products">
+          <td> {{product.productname }}</td>
+          <td>{{product.productdescription}}</td>
+          <td> {{product.productprice}}</td>
+          <td> {{product.availablequantity}}</td>
+          <td> {{product.isActivated}}</td>
+          <!-- <td> <input type="text" class="form-control" [(ngModel)]="product.productquantity" [ngModel]="0"></td> -->
+          <td>
+            <!-- <button type="button" (click)="addToCart(product)">Buy</button> -->
+
+          </td>
+        </tr>
+      </tbody>
+
+     </table>
+</div>

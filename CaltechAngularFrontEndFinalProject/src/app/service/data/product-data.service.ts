@@ -13,7 +13,7 @@ export class ProductDataService {
   constructor(private httpClient: HttpClient) { }
 
   updateProduct(product: IProduct): Observable<IProduct> {
-    return this.httpClient.put<IProduct>(`${this._rootUrl}/${product.product_id}`, product);
+    return this.httpClient.put<IProduct>(`${this._rootUrl}/${product.id}`, product);
   }
 
 //   retrieveAllTodos(username :any){

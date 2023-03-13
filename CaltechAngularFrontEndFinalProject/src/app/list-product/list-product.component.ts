@@ -36,7 +36,7 @@ import { ICart } from '../interfaces/cart';
 export class ListProductComponent implements OnInit {
   products: IProduct[] | undefined;
   subscription!: Subscription;
-  product_id: number =0
+  id: number =0
   quantity = new FormControl('');
   productname: string =''
   @Input() productquantity: number = 1
@@ -95,7 +95,7 @@ export class ListProductComponent implements OnInit {
     this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
       this.products = products;
       console.log(products);
-      console.log(products[0].product_id);
+      console.log(products[0].id);
       console.log(products[0].productname);
       console.log(products[0].productdescription);
       console.log(products[0].productURL);
@@ -103,7 +103,7 @@ export class ListProductComponent implements OnInit {
       console.log(products[0].productprice);
       console.log(products[0].availablequantity);
       console.log(products[0].isActivated);
-      console.log(products[1].product_id);
+      console.log(products[1].id);
       console.log(products[1].productname);
       console.log(products[1].productdescription);
     });
@@ -118,8 +118,8 @@ export class ListProductComponent implements OnInit {
     window.alert('Your product has been added to the cart!');
   }
 
-  populateData(product_id: any, productprice: number, productname:any, productquantity: number){
-    console.log(product_id);
+  populateData(id: number, productprice: number, productname:any, productquantity: number){
+    console.log(id);
     console.log(productname);
     console.log(productquantity);
     this.productordertotalamount = this.productorderquantity * productprice;

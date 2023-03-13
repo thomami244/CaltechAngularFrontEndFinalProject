@@ -25,7 +25,7 @@ export class AdminProductDashboardComponent implements OnInit {
   @Input() adminLoggedIn:Boolean = false;
     products: IProduct[] | undefined;
     subscription!: Subscription;
-    product_id: number =0
+    id: number =0
     quantity = new FormControl('');
     productname: string =''
     @Input() productquantity: number = 1
@@ -72,10 +72,10 @@ export class AdminProductDashboardComponent implements OnInit {
       this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
         this.products = products;
         console.log(products);
-        console.log(products[0].product_id);
+        console.log(products[0].id);
         console.log(products[0].productname);
         console.log(products[0].isActivated);
-        console.log(products[1].product_id);
+        console.log(products[1].id);
         console.log(products[1].productname);
         console.log(products[1].productdescription);
         console.log(products[0].isActivated);
@@ -91,8 +91,8 @@ export class AdminProductDashboardComponent implements OnInit {
       window.alert('Your product has been added to the cart!');
     }
 
-    populateData(product_id: any, productprice: number, productname:any, productquantity: number){
-      console.log(product_id);
+    populateData(id: number, productprice: number, productname:any, productquantity: number){
+      console.log(id);
       console.log(productname);
       console.log(productquantity);
       this.productordertotalamount = this.productorderquantity * productprice;

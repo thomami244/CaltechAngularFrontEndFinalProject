@@ -4,7 +4,7 @@
   <div>
     <span>UserId: {{ user.id }}</span><br>
     <span>User Name: {{ user.username }}</span><br>
-    <span>Update Current Password:
+    <span>Update Current Password (at least 5 characters):
       <input type="text" class="form-control" [(ngModel)]="user.password">
     </span><br>
     <button class="btn btn-primary" (click)="updateUser()">Update User</button>

@@ -107,7 +107,7 @@ export class AdminProductDashboardComponent implements OnInit {
         product.isActivated = true
       }
       else {
-        product.isActivated = false
+        product.isActivated = true
       }
 
       this.productdataservice.updateProduct(product)

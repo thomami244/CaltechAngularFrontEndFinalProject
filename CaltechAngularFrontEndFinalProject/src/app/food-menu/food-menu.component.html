@@ -10,6 +10,9 @@
           <div class="btn-group"
           role="group"
           aria-label="Basic radio toggle button group">
+
+
+
             <input type="radio"
             class="btn-check"
             name="category"
@@ -43,12 +46,25 @@
             id="sides"
             autocomplete="off">
             <label class="btn btn-outline-primary btn-outline-info" for="sides">Sides</label>
+
+            <input type="radio"
+            class="btn-check"
+            name="category"
+            id="all"
+            value="all"
+            formControlName="all"
+            (change)="changeCategory($event)"
+            autocomplete="off"
+            >
+
+            <label class="btn btn-outline-primary btn-outline-secondary" for="all">All Products</label>
         </div>
         </div>
       </div>
     </div>
   </form>
-</div>
-
+</div>{{category}}
+<div *ngIf="category == 'all'">Content to render when condition is true.
 
 <app-list-product> </app-list-product>
+</div>

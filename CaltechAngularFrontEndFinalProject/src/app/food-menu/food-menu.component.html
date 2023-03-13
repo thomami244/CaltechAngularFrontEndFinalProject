@@ -4,7 +4,7 @@
 
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
-      <label for="category"></label>
+      <label for="productcategory"></label>
       <div class="row text-justify text-center">
         <div class="col-lg-12">
           <div class="btn-group"
@@ -15,10 +15,10 @@
 
             <input type="radio"
             class="btn-check"
-            name="category"
+            name="productcategory"
             id="meals"
             value="meals"
-            formControlName="category"
+            formControlName="productcategory"
             (change)="changeCategory($event)"
             autocomplete="off"
             checked
@@ -28,10 +28,10 @@
 
             <input type="radio"
             class="btn-check"
-            name="category"
+            name="productcategory"
             id="drinks"
             value="drinks"
-            formControlName="category"
+            formControlName="productcategory"
             (change)="changeCategory($event)"
             autocomplete="off">
 
@@ -39,9 +39,9 @@
 
             <input type="radio"
             class="btn-check"
-            name="category"
+            name="productcategory"
             value="sides"
-            formControlName="category"
+            formControlName="productcategory"
             (change)="changeCategory($event)"
             id="sides"
             autocomplete="off">
@@ -49,10 +49,10 @@
 
             <input type="radio"
             class="btn-check"
-            name="category"
+            name="productcategory"
             id="all"
             value="all"
-            formControlName="all"
+            formControlName="productcategory"
             (change)="changeCategory($event)"
             autocomplete="off"
             >
@@ -63,8 +63,8 @@
       </div>
     </div>
   </form>
-</div>{{category}}
-<div *ngIf="category == 'all'">Content to render when condition is true.
+<!-- </div>{{productcategory}} -->
+<div *ngIf="productcategory == 'all'">
 
 <app-list-product> </app-list-product>
 </div>

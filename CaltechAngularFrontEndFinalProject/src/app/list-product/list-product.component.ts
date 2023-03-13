@@ -46,7 +46,7 @@ export class ListProductComponent implements OnInit {
   product!: IProduct
   availablequantity: number =0
   dummyUser!: IUser
-  @Input() category: string ="meals"
+  @Input() productcategory: string ="meals"
   @Input() username!: string
   @Input() password!: string
   @Input() productorderquantity: number =0

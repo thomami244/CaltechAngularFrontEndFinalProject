@@ -10,17 +10,17 @@ import { FormGroup, FormControl, Validators,  ReactiveFormsModule } from '@angul
 })
 export class FoodMenuComponent implements OnInit {
   ngOnInit(): void {
-   this.category = 'meals'
+   this.productcategory = 'meals'
   }
   // FoodMenuComponent = new FormControl('');
   // quantity = new FormControl('');
 
 
-  @Input() category: string = "meals"
-  @Output() categoryChange: string = "meals"
+  @Input() productcategory: string = "meals"
+  @Output() productcategoryyChange: string = "meals"
 
   form = new FormGroup({
-    category: new FormControl('', Validators.required)
+    productcategory: new FormControl('', Validators.required)
   });
 
   get f(){
@@ -33,7 +33,7 @@ export class FoodMenuComponent implements OnInit {
 
   changeCategory(e: any) {
     console.log(e.target.value);
-    this.category = e.target.value
+    this.productcategory = e.target.value
 
   }
 }

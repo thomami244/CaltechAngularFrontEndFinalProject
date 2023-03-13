@@ -65,6 +65,17 @@
   </form>
 <!-- </div>{{productcategory}} -->
 <div *ngIf="productcategory == 'all'">
+  <app-list-product> </app-list-product>
+ </div>
 
-<app-list-product> </app-list-product>
+ <div *ngIf="productcategory == 'drinks'">
+  <app-list-product> </app-list-product>
+</div>
+
+<div *ngIf="productcategory == 'meals'">
+  <app-list-product> </app-list-product>
+</div>
+
+<div *ngIf="productcategory == 'sides'">
+  <app-list-product> </app-list-product>
 </div>

@@ -95,7 +95,7 @@ export class ListProductComponent implements OnInit {
     this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
       this.products = products.filter(hb => hb.isActivated === true) || [];
       if (this.foodmenucomponent.productcategory != "all"){
-      this.products = products.filter(hb => hb.productcategory === this.foodmenucomponent.productcategory) || [];
+      this.products = products.filter(hb => hb.isActivated === true && hb.productcategory === this.foodmenucomponent.productcategory) || [];
     }
       console.log(products);
       console.log(products[0].id);

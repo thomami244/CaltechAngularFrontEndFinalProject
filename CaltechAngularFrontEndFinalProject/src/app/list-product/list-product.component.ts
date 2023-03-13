@@ -93,7 +93,7 @@ export class ListProductComponent implements OnInit {
 
 
     this.subscription = this.productdataservice.retrieveAllProducts().subscribe((products: IProduct[]) => {
-      this.products = products;
+      this.products = products.filter(hb => hb.isActivated === true) || [];
       console.log(products);
       console.log(products[0].id);
       console.log(products[0].productname);
